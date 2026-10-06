@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codesolz/weargraph',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'f5e95f12b860bc5db8c076acb1fede53a80559b6',
+        'pretty_version' => '1.0.0',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'codesolz/weargraph' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'f5e95f12b860bc5db8c076acb1fede53a80559b6',
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
