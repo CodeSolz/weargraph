@@ -3,7 +3,7 @@
         'name' => 'codesolz/weargraph',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '6c3c9f1942d39ebe07b6102b1125dcb0756d9b22',
+        'reference' => 'f5e95f12b860bc5db8c076acb1fede53a80559b6',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'codesolz/weargraph' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '6c3c9f1942d39ebe07b6102b1125dcb0756d9b22',
+            'reference' => 'f5e95f12b860bc5db8c076acb1fede53a80559b6',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

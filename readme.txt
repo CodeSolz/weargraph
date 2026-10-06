@@ -13,11 +13,11 @@ Let shoppers preview clothes on themselves with an AI fitting room, and create o
 
 == Description ==
 
-Shoppers want to know how a garment will look on **them**, not only on a model. WearGraph adds an AI fitting room to your WooCommerce product pages: the shopper adds a photo, picks a colour or option, and gets an **AI appearance preview** of the product on themselves, with an Add to Cart button right beside it.
+Shoppers want to know how a garment will look on **them**, not only on a model. WearGraph adds an AI fitting room to your WooCommerce product pages: the shopper adds a photo, picks a colour or option, and gets an **AI appearance preview** of the product on themselves, with an Add to Cart button right beside it. For larger stores, the optional [WearGraph Pro](https://codesolz.net/our-products/wordpress-plugin/weargraph/) add-on adds brand kits, video, saved looks and more.
 
 WearGraph also gives you a **Product Studio** inside the product editor, to turn your existing product photos into on-model and lifestyle images, and a **Catalog** screen that tells you which of your products are ready for virtual try-on and what to fix for the rest.
 
-WearGraph runs **inside your WordPress site with your own AI provider key**. Choose **Google Gemini**, **OpenAI**, **OpenRouter** (one key for 50+ image models), **Black Forest Labs FLUX** or **xAI Grok**, connect one or several, and pick which provider makes product images, try-on previews and alt text. There is no WearGraph account, no subscription and no WearGraph server in between: you pay your provider directly for what you generate (from about US$0.02 to US$0.15 per image, depending on the provider and model).
+WearGraph runs **inside your WordPress site with your own AI provider key**. Choose **Google Gemini**, **OpenAI**, **OpenRouter** (one key for 50+ image models), **Black Forest Labs FLUX** or **xAI Grok**, connect one or several, and pick which provider makes product images, try-on previews and alt text. There is no WearGraph account, no subscription and no WearGraph server in between: you pay your provider directly for what you generate.
 
 ### AI fitting room (virtual try-on)
 
@@ -66,7 +66,7 @@ WearGraph runs **inside your WordPress site with your own AI provider key**. Cho
 
 ### WearGraph Pro
 
-WearGraph Pro is a separate, optional add-on with features for larger stores (brand kits, video, saved looks and more). Everything described above works fully without it.
+[WearGraph Pro](https://codesolz.net/our-products/wordpress-plugin/weargraph/) is a separate, optional add-on with features for larger stores (brand kits, video, saved looks and more). Everything described above works fully without it.
 
 == Installation ==
 
