@@ -1,0 +1,1794 @@
+/*
+ * WearGraph admin: the "atelier" design language. Ink, warm ivory and one champagne accent;
+ * hairlines instead of shadows; small-caps labels and large tabular numbers.
+ *
+ * The token names (--wg-primary, --wg-slate-*, --wg-green…) are the contract other
+ * stylesheets (Studio, WearGraph Pro) build on; their values carry the palette.
+ */
+.weargraph-app,
+.weargraph-studio {
+	/* Ink */
+	--wg-ink: #1b2440;
+	--wg-ink-2: #2b3a66;
+	/* Neutrals, warm (slate-* names kept for extensions). */
+	--wg-slate-50: #faf8f4;
+	--wg-slate-100: #f2eee7;
+	--wg-slate-200: #e7e1d7;
+	--wg-slate-300: #d5cdc0;
+	--wg-slate-400: #a39b90;
+	--wg-slate-500: #676a78; /* 5.6:1 on white */
+	--wg-slate-600: #4a4e5e;
+	--wg-slate-700: #333746;
+	--wg-slate-900: #1b2440;
+	--wg-canvas: #f7f3ec;
+	/* Accent: champagne. The -text shade is for small text (4.9:1 on white). */
+	--wg-accent: #d4a24c;
+	--wg-accent-2: #ebc77f;
+	--wg-accent-text: #8a5e16;
+	--wg-accent-soft: #fbf1de;
+	--wg-primary: var(--wg-ink);
+	--wg-primary-2: var(--wg-accent);
+	/* Status: muted, with AA text shades. */
+	--wg-green: #1e8467;
+	--wg-amber: #c58a2a;
+	--wg-red: #c2412d;
+	--wg-blue: #4b57c4;
+	--wg-green-text: #1b6e55;
+	--wg-red-text: #a6321f;
+	--wg-amber-text: #8a5a12;
+	--wg-blue-text: #3f4aa8;
+	--wg-green-soft: #e2f3ed;
+	--wg-amber-soft: #fbf2e1;
+	--wg-red-soft: #fbebe8;
+	--wg-blue-soft: #eceefb;
+	--wg-radius-sm: 8px;
+	--wg-radius-md: 10px;
+	--wg-radius-lg: 14px;
+	--wg-shadow-sm: 0 1px 2px rgba(27, 36, 64, .04);
+	--wg-shadow-lift: 0 12px 32px -18px rgba(27, 36, 64, .35);
+	--wg-ring: 0 0 0 3px rgba(212, 162, 76, .35);
+	--wg-ease: cubic-bezier(.2, .7, .2, 1);
+	--wg-label: 600 11px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	color: var(--wg-slate-700);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* WearGraph screens sit on the warm canvas. */
+body.weargraph-screen,
+body.weargraph-screen #wpcontent,
+body.weargraph-screen #wpfooter {
+	background: #f7f3ec;
+}
+
+.wrap.weargraph-app {
+	margin: 20px 20px 0 0;
+}
+
+.weargraph-shell {
+	max-width: none;
+}
+
+/* ---------- Masthead + page header: one ink band ---------- */
+.weargraph-masthead {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 14px 28px;
+	background: #18203a;
+	border-radius: var(--wg-radius-lg) var(--wg-radius-lg) 0 0;
+	border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.weargraph-masthead__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.weargraph-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	background: linear-gradient(145deg, #f3d9a0, #d4a24c 55%, #a8772b);
+	color: var(--wg-ink);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+.weargraph-masthead__name {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: .01em;
+}
+
+.weargraph-masthead__edition {
+	padding: 2px 8px;
+	border: 1px solid rgba(235, 199, 127, .55);
+	border-radius: 999px;
+	color: #f0cf8e;
+	font: var(--wg-label);
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+.weargraph-masthead__meta {
+	color: rgba(255, 255, 255, .55);
+	font-size: 12px;
+}
+
+.weargraph-masthead__meta a {
+	color: rgba(255, 255, 255, .8);
+	text-decoration: none;
+}
+
+.weargraph-masthead__meta a:hover,
+.weargraph-masthead__meta a:focus {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.weargraph-page-header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 24px;
+	margin-bottom: 28px;
+	padding: 26px 28px 30px;
+	background:
+		radial-gradient(55% 140% at 95% 0%, rgba(235, 199, 127, .22), rgba(235, 199, 127, 0) 65%),
+		linear-gradient(120deg, #1b2440 0%, #24325c 60%, #2d3d6e 100%);
+	border-radius: 0 0 var(--wg-radius-lg) var(--wg-radius-lg);
+	overflow: hidden;
+}
+
+/* A page without the masthead (extensions calling the header alone) keeps round corners. */
+.weargraph-shell > .weargraph-page-header:first-child {
+	border-radius: var(--wg-radius-lg);
+}
+
+.weargraph-page-title {
+	margin: 0;
+	color: #fff;
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -.015em;
+}
+
+.weargraph-page-desc {
+	max-width: 640px;
+	margin: 6px 0 0;
+	color: rgba(255, 255, 255, .62);
+	font-size: 14px;
+}
+
+.weargraph-page-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+/* Buttons on the ink band. */
+.weargraph-app .weargraph-page-actions .button {
+	border-color: rgba(255, 255, 255, .22);
+	background: transparent;
+	color: #fff;
+}
+
+.weargraph-app .weargraph-page-actions .button:hover,
+.weargraph-app .weargraph-page-actions .button:focus {
+	border-color: rgba(255, 255, 255, .5);
+	background: rgba(255, 255, 255, .06);
+	color: #fff;
+}
+
+.weargraph-app .weargraph-page-actions .button-primary,
+.weargraph-app .weargraph-page-actions .button-primary:focus {
+	border-color: var(--wg-accent);
+	background: linear-gradient(180deg, #ebc77f, #d4a24c);
+	color: var(--wg-ink);
+}
+
+.weargraph-app .weargraph-page-actions .button-primary:hover {
+	border-color: #ebc77f;
+	background: linear-gradient(180deg, #f3d59a, #dcae5c);
+	color: var(--wg-ink);
+}
+
+/* ---------- Cards ---------- */
+.weargraph-card {
+	background: #fff;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	box-shadow: var(--wg-shadow-sm);
+	padding: 24px 26px;
+}
+
+.weargraph-card h3 {
+	margin: 0 0 16px;
+	color: var(--wg-ink);
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -.005em;
+}
+
+.weargraph-empty {
+	text-align: center;
+	padding: 56px 24px;
+}
+
+/* ---------- Notices ---------- */
+.weargraph-notice {
+	position: relative;
+	margin: 0 0 20px;
+	padding: 4px 18px 4px 20px;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-md);
+	background: #fff;
+	color: var(--wg-slate-700);
+}
+
+.weargraph-notice::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 0;
+	width: 3px;
+	border-radius: 0 3px 3px 0;
+	background: var(--wg-slate-400);
+}
+
+.weargraph-notice p {
+	margin: 10px 0;
+}
+
+.weargraph-notice--info { border-color: #d8e2ee; background: var(--wg-blue-soft); }
+.weargraph-notice--info::before { background: var(--wg-blue); }
+.weargraph-notice--warning { border-color: #efdcb8; background: var(--wg-amber-soft); }
+.weargraph-notice--warning::before { background: var(--wg-amber); }
+.weargraph-notice--error { border-color: #f0cfc8; background: var(--wg-red-soft); }
+.weargraph-notice--error::before { background: var(--wg-red); }
+.weargraph-notice--success { border-color: #cfe4d8; background: var(--wg-green-soft); }
+.weargraph-notice--success::before { background: var(--wg-green); }
+
+/* ---------- Links ---------- */
+.weargraph-app a {
+	color: var(--wg-ink);
+	text-decoration-color: rgba(212, 162, 76, .6);
+	text-underline-offset: 3px;
+}
+
+.weargraph-app a:hover,
+.weargraph-app a:focus {
+	color: var(--wg-accent-text);
+}
+
+.weargraph-app a:focus {
+	box-shadow: none;
+	outline: 2px solid var(--wg-accent);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* ---------- Settings: section list + panel ---------- */
+.weargraph-settings {
+	display: grid;
+	grid-template-columns: 232px minmax(0, 1fr);
+	gap: 24px;
+	align-items: start;
+}
+
+.weargraph-settings__nav {
+	position: sticky;
+	top: 52px;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding: 10px;
+	background: #fff;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	box-shadow: var(--wg-shadow-sm);
+}
+
+.weargraph-app .weargraph-settings__tab {
+	position: relative;
+	display: block;
+	padding: 10px 14px 10px 16px;
+	border-radius: var(--wg-radius-sm);
+	color: var(--wg-slate-600);
+	font-weight: 500;
+	text-decoration: none;
+	transition: background .15s var(--wg-ease), color .15s var(--wg-ease);
+}
+
+.weargraph-app .weargraph-settings__tab:hover,
+.weargraph-app .weargraph-settings__tab:focus {
+	background: var(--wg-slate-50);
+	color: var(--wg-ink);
+}
+
+.weargraph-app .weargraph-settings__tab.is-active {
+	background: var(--wg-slate-100);
+	color: var(--wg-ink);
+	font-weight: 600;
+}
+
+.weargraph-settings__tab.is-active::before {
+	content: "";
+	position: absolute;
+	top: 9px;
+	bottom: 9px;
+	left: 0;
+	width: 3px;
+	border-radius: 3px;
+	background: var(--wg-accent);
+}
+
+.weargraph-settings__panel {
+	padding: 8px 32px 28px;
+}
+
+.weargraph-settings__panel h3 {
+	margin: 24px 0 4px;
+	color: var(--wg-ink);
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -.01em;
+}
+
+.weargraph-settings__panel > form > h3:first-child,
+.weargraph-settings__panel > h3:first-child {
+	margin-top: 22px;
+}
+
+.weargraph-settings__panel .form-table {
+	margin-top: 8px;
+}
+
+/* A sub-section inside a tab (e.g. one provider among several). */
+.weargraph-settings__panel h4 {
+	margin: 26px 0 0;
+	padding-top: 18px;
+	border-top: 1px solid var(--wg-slate-200);
+	color: var(--wg-ink);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.weargraph-settings__panel .form-table th {
+	width: 220px;
+	padding: 22px 24px 22px 0;
+	color: var(--wg-ink);
+	font-weight: 600;
+}
+
+.weargraph-settings__panel .form-table td {
+	padding: 18px 0;
+}
+
+.weargraph-settings__panel .form-table tr {
+	border-bottom: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-settings__panel .form-table tr:last-child {
+	border-bottom: 0;
+}
+
+.weargraph-app .description,
+.weargraph-settings__panel .description {
+	color: var(--wg-slate-500);
+	font-size: 13px;
+	font-style: normal;
+}
+
+/* Switches (still native checkboxes: keyboard and screen readers unchanged). */
+.weargraph-settings__panel input[type="checkbox"] {
+	-webkit-appearance: none;
+	appearance: none;
+	position: relative;
+	width: 38px;
+	height: 22px;
+	margin: 0 10px 0 0;
+	border: 0;
+	border-radius: 999px;
+	background: var(--wg-slate-200);
+	box-shadow: inset 0 0 0 1px var(--wg-slate-400); /* 3:1 track edge (WCAG 1.4.11). */
+	vertical-align: middle;
+	cursor: pointer;
+	transition: background .18s var(--wg-ease);
+}
+
+.weargraph-settings__panel input[type="checkbox"]::before,
+.weargraph-settings__panel input[type="checkbox"]:checked::before {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(27, 36, 64, .3);
+	transition: left .18s var(--wg-ease);
+}
+
+.weargraph-settings__panel input[type="checkbox"]:checked {
+	background: var(--wg-ink);
+	box-shadow: none;
+}
+
+.weargraph-settings__panel input[type="checkbox"]:checked::before {
+	left: 19px;
+}
+
+.weargraph-settings__panel input[type="checkbox"]:focus-visible {
+	outline: 0;
+	box-shadow: inset 0 0 0 1px var(--wg-slate-400), var(--wg-ring);
+}
+
+.weargraph-settings__panel input[type="checkbox"]:disabled {
+	opacity: .45;
+	cursor: not-allowed;
+}
+
+.weargraph-settings__panel label + br + label,
+.weargraph-settings__panel td > label {
+	display: inline-flex;
+	align-items: center;
+	margin: 4px 0;
+}
+
+/* ---------- Fields ---------- */
+.weargraph-app input[type="text"],
+.weargraph-app input[type="password"],
+.weargraph-app input[type="number"],
+.weargraph-app input[type="search"],
+.weargraph-app input[type="url"],
+.weargraph-app input[type="email"],
+.weargraph-app select,
+.weargraph-app textarea,
+.weargraph-studio input[type="text"],
+.weargraph-studio input[type="number"],
+.weargraph-studio select,
+.weargraph-studio textarea {
+	border: 1px solid var(--wg-slate-300);
+	border-radius: var(--wg-radius-sm);
+	background-color: #fff;
+	color: var(--wg-ink);
+	box-shadow: 0 1px 0 rgba(27, 36, 64, .02);
+	transition: border-color .15s var(--wg-ease), box-shadow .15s var(--wg-ease);
+}
+
+.weargraph-app input[type="text"],
+.weargraph-app input[type="password"],
+.weargraph-app input[type="number"],
+.weargraph-app input[type="search"],
+.weargraph-app input[type="url"],
+.weargraph-app input[type="email"],
+.weargraph-app select,
+.weargraph-studio input[type="text"],
+.weargraph-studio input[type="number"],
+.weargraph-studio select {
+	min-height: 38px;
+	padding: 0 12px;
+}
+
+.weargraph-app select,
+.weargraph-studio select {
+	padding-right: 30px;
+}
+
+.weargraph-app textarea,
+.weargraph-studio textarea {
+	padding: 8px 12px;
+}
+
+.weargraph-app input[type="text"]:hover,
+.weargraph-app input[type="password"]:hover,
+.weargraph-app input[type="number"]:hover,
+.weargraph-app input[type="search"]:hover,
+.weargraph-app select:hover,
+.weargraph-app textarea:hover,
+.weargraph-studio select:hover,
+.weargraph-studio textarea:hover,
+.weargraph-studio input[type="text"]:hover {
+	border-color: var(--wg-slate-400);
+}
+
+.weargraph-app input[type="text"]:focus,
+.weargraph-app input[type="password"]:focus,
+.weargraph-app input[type="number"]:focus,
+.weargraph-app input[type="search"]:focus,
+.weargraph-app input[type="url"]:focus,
+.weargraph-app input[type="email"]:focus,
+.weargraph-app select:focus,
+.weargraph-app textarea:focus,
+.weargraph-studio input[type="text"]:focus,
+.weargraph-studio input[type="number"]:focus,
+.weargraph-studio select:focus,
+.weargraph-studio textarea:focus {
+	border-color: var(--wg-accent-text);
+	box-shadow: var(--wg-ring);
+	outline: 0;
+}
+
+.weargraph-app input[type="radio"]:checked::before,
+.weargraph-studio input[type="radio"]:checked::before {
+	background-color: var(--wg-ink);
+}
+
+/* ---------- Buttons ---------- */
+.weargraph-app .button,
+.weargraph-studio .button {
+	min-height: 36px;
+	padding: 0 16px;
+	border: 1px solid var(--wg-slate-300);
+	border-radius: var(--wg-radius-sm);
+	background: #fff;
+	color: var(--wg-ink);
+	font-weight: 500;
+	line-height: 34px;
+	box-shadow: 0 1px 0 rgba(27, 36, 64, .03);
+	transition: border-color .15s var(--wg-ease), background .15s var(--wg-ease), color .15s var(--wg-ease);
+}
+
+.weargraph-app .button:hover,
+.weargraph-studio .button:hover {
+	border-color: var(--wg-slate-400);
+	background: var(--wg-slate-50);
+	color: var(--wg-ink);
+}
+
+.weargraph-app .button-primary,
+.weargraph-studio .button-primary {
+	border-color: var(--wg-ink);
+	background: var(--wg-ink);
+	color: #fff;
+	font-weight: 600;
+}
+
+.weargraph-app .button-primary:hover,
+.weargraph-app .button-primary:focus,
+.weargraph-studio .button-primary:hover,
+.weargraph-studio .button-primary:focus {
+	border-color: var(--wg-ink-2);
+	background: var(--wg-ink-2);
+	color: #fff;
+}
+
+.weargraph-app .button:focus,
+.weargraph-app .button-primary:focus,
+.weargraph-studio .button:focus,
+.weargraph-studio .button-primary:focus {
+	box-shadow: var(--wg-ring);
+	outline: 0;
+}
+
+.weargraph-app .button:disabled,
+.weargraph-app .button[disabled],
+.weargraph-studio .button:disabled,
+.weargraph-studio .button[disabled] {
+	opacity: .5;
+}
+
+.weargraph-app .button-small,
+.weargraph-studio .button-small {
+	min-height: 30px;
+	padding: 0 12px;
+	line-height: 28px;
+	font-size: 12px;
+}
+
+.weargraph-app .button-link {
+	color: var(--wg-accent-text);
+}
+
+.weargraph-settings__actions {
+	margin: 28px 0 0;
+	padding-top: 20px;
+	border-top: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-key-status {
+	display: flex;
+	width: fit-content;
+	align-items: center;
+	gap: 6px;
+	margin: 0 0 10px;
+	color: var(--wg-slate-500);
+}
+
+.weargraph-key-status.is-set {
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: var(--wg-green-soft);
+	color: var(--wg-green-text);
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.weargraph-test-result {
+	margin-left: 12px;
+	font-weight: 500;
+}
+
+.weargraph-test-result.is-ok { color: var(--wg-green-text); }
+.weargraph-test-result.is-error { color: var(--wg-red-text); }
+
+.weargraph-disclosure {
+	margin-top: 28px;
+	padding: 20px 22px;
+	border-radius: var(--wg-radius-md);
+	background: var(--wg-slate-50);
+	border: 1px solid var(--wg-slate-200);
+}
+
+.weargraph-disclosure h3 {
+	margin-top: 0;
+	font-size: 14px;
+}
+
+.weargraph-disclosure__warning {
+	padding: 10px 14px;
+	border-radius: var(--wg-radius-sm);
+	background: var(--wg-amber-soft);
+	border: 1px solid #efdcb8;
+	color: var(--wg-amber-text);
+}
+
+@media (max-width: 960px) {
+	.weargraph-settings {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.weargraph-settings__nav {
+		position: static;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.weargraph-settings__tab.is-active::before {
+		top: auto;
+		right: 12px;
+		bottom: 2px;
+		left: 12px;
+		width: auto;
+		height: 2px;
+	}
+
+	.weargraph-settings__panel {
+		padding: 4px 20px 22px;
+	}
+}
+
+/* ---------- Catalog ---------- */
+.weargraph-summary {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+	gap: 14px;
+	margin-bottom: 18px;
+}
+
+.weargraph-app .weargraph-summary__card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 18px 20px 18px 22px;
+	background: #fff;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	box-shadow: var(--wg-shadow-sm);
+	color: var(--wg-slate-600);
+	text-decoration: none;
+	transition: border-color .15s var(--wg-ease), box-shadow .2s var(--wg-ease), transform .2s var(--wg-ease);
+}
+
+.weargraph-summary__card::before {
+	content: "";
+	position: absolute;
+	top: 22px;
+	right: 20px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--wg-slate-400);
+}
+
+.weargraph-app .weargraph-summary__card:hover,
+.weargraph-app .weargraph-summary__card:focus {
+	border-color: var(--wg-slate-300);
+	box-shadow: var(--wg-shadow-lift);
+	transform: translateY(-1px);
+	color: var(--wg-slate-600);
+}
+
+.weargraph-summary__card.is-green::before { background: var(--wg-green); }
+.weargraph-summary__card.is-amber::before { background: var(--wg-amber); }
+.weargraph-summary__card.is-blue::before { background: var(--wg-blue); }
+.weargraph-summary__card.is-current,
+.weargraph-summary__card[aria-current] { border-color: var(--wg-ink); }
+
+.weargraph-summary__num {
+	color: var(--wg-ink);
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 1.15;
+	letter-spacing: -.02em;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-summary__label {
+	order: -1;
+	color: var(--wg-slate-500);
+	font: var(--wg-label);
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.weargraph-headline {
+	margin: 4px 0 14px;
+	color: var(--wg-slate-600);
+	font-size: 14px;
+}
+
+.weargraph-headline strong {
+	color: var(--wg-ink);
+}
+
+.weargraph-scan {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 16px;
+	padding: 12px 16px;
+	background: #fff;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-md);
+}
+
+.weargraph-scan__text {
+	color: var(--wg-slate-600);
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-progress {
+	flex: 1;
+	max-width: 480px;
+	height: 6px;
+	background: var(--wg-slate-100);
+	border-radius: 999px;
+	overflow: hidden;
+}
+
+.weargraph-progress span,
+.weargraph-bar span {
+	display: block;
+	height: 100%;
+	border-radius: inherit;
+	background: linear-gradient(90deg, var(--wg-accent-2), var(--wg-accent));
+	transition: width .4s var(--wg-ease);
+}
+
+.weargraph-bar {
+	width: 120px;
+	height: 4px;
+	margin-top: 6px;
+	background: var(--wg-slate-100);
+	border-radius: 999px;
+	overflow: hidden;
+}
+
+/* The WordPress list table, dressed as a card. */
+.weargraph-app .wp-list-table {
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: var(--wg-shadow-sm);
+}
+
+.weargraph-app .wp-list-table thead th,
+.weargraph-app .wp-list-table thead td,
+.weargraph-app .wp-list-table tfoot th,
+.weargraph-app .wp-list-table tfoot td {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--wg-slate-200);
+	background: var(--wg-slate-50);
+	color: var(--wg-slate-500);
+	font: var(--wg-label);
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.weargraph-app .wp-list-table thead th a,
+.weargraph-app .wp-list-table thead th a span {
+	color: var(--wg-slate-500);
+}
+
+.weargraph-app .wp-list-table.striped > tbody > :nth-child(odd) {
+	background: #fff;
+}
+
+.weargraph-app .wp-list-table tbody tr {
+	transition: background .12s var(--wg-ease);
+}
+
+.weargraph-app .wp-list-table tbody tr:hover {
+	background: var(--wg-slate-50);
+}
+
+.weargraph-app .wp-list-table tbody td,
+.weargraph-app .wp-list-table tbody th {
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid var(--wg-slate-100);
+	vertical-align: middle;
+}
+
+.weargraph-app .wp-list-table tbody tr:last-child td,
+.weargraph-app .wp-list-table tbody tr:last-child th {
+	border-bottom: 0;
+}
+
+.weargraph-app .wp-list-table .row-title,
+.weargraph-app .wp-list-table strong a {
+	color: var(--wg-ink);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.weargraph-app .subsubsub {
+	color: var(--wg-slate-400);
+}
+
+.weargraph-app .subsubsub a {
+	color: var(--wg-slate-600);
+	text-decoration: none;
+}
+
+.weargraph-app .subsubsub a.current {
+	color: var(--wg-ink);
+	font-weight: 600;
+}
+
+.weargraph-app .subsubsub .count {
+	color: var(--wg-slate-400);
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-app .tablenav {
+	margin: 10px 0 12px;
+}
+
+.weargraph-cell-product {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.weargraph-cell-product img,
+.weargraph-thumb-placeholder,
+.weargraph-source-thumb {
+	width: 44px;
+	height: 44px;
+	object-fit: cover;
+	border-radius: var(--wg-radius-sm);
+	background: var(--wg-slate-100);
+	box-shadow: inset 0 0 0 1px rgba(27, 36, 64, .06);
+	display: inline-block;
+	flex: none;
+}
+
+.weargraph-source-thumb { width: 52px; height: 52px; }
+
+.weargraph-muted { color: var(--wg-slate-500); }
+
+.weargraph-pill,
+.weargraph-status-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: var(--wg-slate-100);
+	color: var(--wg-slate-600);
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.weargraph-pill::before,
+.weargraph-status-pill::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: currentColor;
+	opacity: .8;
+}
+
+.weargraph-pill.is-on,
+.weargraph-status-pill.is-ready { background: var(--wg-green-soft); color: var(--wg-green-text); }
+.weargraph-status-pill.is-needs_image { background: var(--wg-amber-soft); color: var(--wg-amber-text); }
+.weargraph-status-pill.is-needs_review { background: var(--wg-blue-soft); color: var(--wg-blue-text); }
+.weargraph-status-pill.is-unsupported { background: var(--wg-slate-100); color: var(--wg-slate-500); }
+
+.weargraph-score {
+	color: var(--wg-slate-500);
+	font-size: 12px;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-problems {
+	margin: 6px 0 0;
+	padding-left: 16px;
+	list-style: disc;
+	color: var(--wg-slate-600);
+	font-size: 12px;
+}
+
+.weargraph-problems li { margin: 0; }
+
+.weargraph-bulk-values select { max-width: 180px; }
+
+/* ---------- Dashboard ---------- */
+.weargraph-dash {
+	container-type: inline-size;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.weargraph-dash__readiness {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+	margin: 0;
+	padding: 12px 16px;
+	border: 1px solid #efd9ad;
+	border-radius: var(--wg-radius-md);
+	background: linear-gradient(90deg, #fcf3e2, #fdf8ef);
+	color: var(--wg-slate-700);
+	font-size: 14px;
+}
+
+.weargraph-dash__readiness-icon {
+	display: inline-flex;
+	color: var(--wg-accent-text);
+}
+
+.weargraph-dash__readiness strong {
+	color: var(--wg-ink);
+}
+
+.weargraph-app .weargraph-dash__readiness a {
+	margin-left: auto;
+	color: var(--wg-ink);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.weargraph-app .weargraph-dash__readiness a::after {
+	content: " \2192";
+}
+
+.weargraph-dash__welcome {
+	margin-bottom: 16px;
+}
+
+/* Figures */
+.weargraph-stat {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	min-width: 0;
+	padding: 20px 22px;
+	background: #fff;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	box-shadow: var(--wg-shadow-sm);
+}
+
+.weargraph-stat__label {
+	color: var(--wg-slate-500);
+	font: var(--wg-label);
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.weargraph-stat__value {
+	color: var(--wg-ink);
+	font-size: 30px;
+	font-weight: 650;
+	line-height: 1.12;
+	letter-spacing: -.02em;
+	font-variant-numeric: tabular-nums;
+	overflow-wrap: anywhere;
+}
+
+.weargraph-stat__hint {
+	color: var(--wg-slate-500);
+	font-size: 12px;
+	line-height: 1.45;
+}
+
+/* Row 1: sales, funnel, cost. */
+.weargraph-dash__top {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr) minmax(0, .9fr);
+	gap: 16px;
+}
+
+.weargraph-hero {
+	position: relative;
+	justify-content: flex-start;
+	overflow: hidden;
+	color: #fff;
+	border-color: transparent;
+	background:
+		radial-gradient(120% 90% at 100% 0%, rgba(235, 199, 127, .35), rgba(235, 199, 127, 0) 55%),
+		linear-gradient(145deg, #1b2440, #2a3a6a);
+	box-shadow: 0 18px 40px -24px rgba(27, 36, 64, .8);
+}
+
+.weargraph-hero .weargraph-stat__label { color: rgba(255, 255, 255, .7); }
+.weargraph-hero .weargraph-stat__value {
+	margin-top: 6px;
+	color: #f0cf8e;
+	font-size: 40px;
+}
+.weargraph-hero .weargraph-stat__hint {
+	margin-top: auto;
+	padding-top: 16px;
+	color: rgba(255, 255, 255, .65);
+}
+
+.weargraph-hero__glyph {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	display: inline-flex;
+	padding: 8px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, .08);
+	color: #f0cf8e;
+}
+
+.weargraph-single[data-card="cost"] .weargraph-stat__value {
+	margin-top: 6px;
+}
+
+/* Funnel */
+.weargraph-funnel {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding: 20px 22px;
+}
+
+.weargraph-funnel__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.weargraph-funnel h3 {
+	margin: 0;
+	color: var(--wg-slate-500);
+	font: var(--wg-label);
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.weargraph-funnel__rate {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	line-height: 1.1;
+}
+
+.weargraph-funnel__rate strong {
+	color: var(--wg-ink);
+	font-size: 28px;
+	font-weight: 650;
+	letter-spacing: -.02em;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-funnel__rate span {
+	margin-top: 4px;
+	color: var(--wg-slate-500);
+	font-size: 11px;
+}
+
+.weargraph-funnel__steps {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.weargraph-funnel__step {
+	display: grid;
+	grid-template-columns: minmax(96px, 9.5em) minmax(0, 1fr) 3.5em;
+	align-items: center;
+	gap: 12px;
+	margin: 0;
+	font-size: 13px;
+}
+
+.weargraph-funnel__label {
+	color: var(--wg-slate-700);
+}
+
+.weargraph-funnel__track {
+	height: 12px;
+	border-radius: 999px;
+	background: var(--wg-slate-100);
+	overflow: hidden;
+}
+
+.weargraph-funnel__fill {
+	display: block;
+	height: 100%;
+	border-radius: inherit;
+}
+
+.weargraph-funnel__step.is-opened .weargraph-funnel__fill { background: linear-gradient(90deg, #1b2440, #33447a); }
+.weargraph-funnel__step.is-tried .weargraph-funnel__fill { background: linear-gradient(90deg, #4b57c4, #7d86dd); }
+.weargraph-funnel__step.is-cart .weargraph-funnel__fill { background: linear-gradient(90deg, #c98e3f, #ebc77f); }
+.weargraph-funnel__step.is-ordered .weargraph-funnel__fill { background: linear-gradient(90deg, #1e8467, #43b592); }
+
+.weargraph-funnel__count {
+	color: var(--wg-ink);
+	font-weight: 600;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-funnel > .weargraph-stat__hint {
+	margin: auto 0 0;
+}
+
+/* Row 2: four groups of two figures. */
+.weargraph-dash__groups {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.weargraph-group {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 20px 22px;
+}
+
+.weargraph-group h3 {
+	margin: 0;
+	color: var(--wg-slate-500);
+	font: var(--wg-label);
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.weargraph-metric {
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.weargraph-metric + .weargraph-metric {
+	padding-top: 16px;
+	border-top: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-metric__icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 12px;
+	background: var(--wg-chip-bg, var(--wg-slate-100));
+	color: var(--wg-chip-fg, var(--wg-ink));
+}
+
+.weargraph-metric__body {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.weargraph-metric .weargraph-stat__label {
+	color: var(--wg-slate-600);
+	font: 500 13px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+.weargraph-metric .weargraph-stat__value {
+	font-size: 26px;
+}
+
+.weargraph-metric .weargraph-stat__hint {
+	font-size: 11.5px;
+}
+
+.weargraph-group.is-shoppers { --wg-chip-bg: #eceefb; --wg-chip-fg: #4b57c4; }
+.weargraph-group.is-conversion { --wg-chip-bg: #fbf0dc; --wg-chip-fg: #a26f16; }
+.weargraph-group.is-health { --wg-chip-bg: #e2f3ed; --wg-chip-fg: #1e8467; }
+.weargraph-group.is-efficiency { --wg-chip-bg: #f1eafb; --wg-chip-fg: #7a4fc0; }
+
+.weargraph-metric.is-alert .weargraph-metric__icon { background: #fbe7e4; color: #c2412d; }
+.weargraph-metric.is-alert .weargraph-stat__value { color: #a6321f; }
+
+/* Extra cards from extensions. */
+.weargraph-dash__more {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+	gap: 16px;
+}
+
+/* Row 3: chart and top products. */
+.weargraph-dash__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+	gap: 16px;
+}
+
+.weargraph-dash__none {
+	margin: 8px 0;
+	color: var(--wg-slate-500);
+}
+
+.weargraph-chart__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 12px;
+	margin-bottom: 8px;
+}
+
+.weargraph-chart__head h3 {
+	margin: 0;
+}
+
+.weargraph-chart__total {
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: var(--wg-accent-soft);
+	color: var(--wg-accent-text);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.weargraph-chart__svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+	color: #d4a24c;
+}
+
+.weargraph-chart__grid {
+	stroke: var(--wg-slate-200);
+	stroke-dasharray: 3 4;
+	vector-effect: non-scaling-stroke;
+}
+
+.weargraph-chart__axis {
+	fill: var(--wg-slate-500);
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-chart__line {
+	stroke: var(--wg-ink);
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.weargraph-chart__dot {
+	fill: #fff;
+	stroke: var(--wg-ink);
+	stroke-width: 2;
+	vector-effect: non-scaling-stroke;
+}
+
+.weargraph-chart__dot.is-today {
+	fill: #d4a24c;
+	stroke: #fff;
+	stroke-width: 2.5;
+}
+
+.weargraph-dash__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.weargraph-dash__list li {
+	display: flex;
+	align-items: center;
+	gap: 10px 12px;
+	min-width: 0;
+	padding: 10px 0;
+	margin: 0;
+	border-bottom: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-dash__list li:last-child {
+	border-bottom: 0;
+}
+
+ol.weargraph-dash__list--ranked {
+	counter-reset: wg-rank;
+}
+
+ol.weargraph-dash__list--ranked li::before {
+	counter-increment: wg-rank;
+	content: counter(wg-rank, decimal-leading-zero);
+	flex: none;
+	width: 22px;
+	color: var(--wg-slate-400);
+	font-size: 12px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-app .weargraph-product {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	min-width: 0;
+	color: var(--wg-ink);
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.weargraph-product > span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.weargraph-app a.weargraph-product:hover > span,
+.weargraph-app a.weargraph-product:focus > span {
+	color: var(--wg-accent-text);
+	text-decoration: underline;
+}
+
+.weargraph-thumb,
+.weargraph-product img {
+	flex: none;
+	width: 36px;
+	height: 36px;
+	object-fit: cover;
+	border-radius: 9px;
+	background: var(--wg-slate-100);
+	box-shadow: inset 0 0 0 1px rgba(27, 36, 64, .08);
+}
+
+.weargraph-thumb--empty {
+	display: inline-block;
+	background: linear-gradient(135deg, var(--wg-slate-100), var(--wg-slate-200));
+}
+
+.weargraph-dash__count {
+	flex: none;
+	margin-left: auto;
+	color: var(--wg-slate-500);
+	font-size: 12px;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Recent activity: event tag, product, time. */
+.weargraph-activity li {
+	display: grid;
+	grid-template-columns: minmax(150px, 13em) minmax(0, 1fr) auto;
+}
+
+.weargraph-activity li {
+	padding: 8px 0;
+}
+
+.weargraph-activity__product {
+	min-width: 0;
+}
+
+.weargraph-activity .weargraph-thumb {
+	width: 30px;
+	height: 30px;
+	border-radius: 8px;
+}
+
+.weargraph-event {
+	justify-self: start;
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: var(--wg-slate-100);
+	color: var(--wg-slate-600);
+	font-size: 12px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.weargraph-event.is-ok { background: #e2f3ed; color: #1b6e55; }
+.weargraph-event.is-money { background: #fbf0dc; color: #8a5e16; }
+.weargraph-event.is-bad { background: #fbe7e4; color: #a6321f; }
+.weargraph-event.is-wait { background: #eceefb; color: #3f4aa8; }
+
+/* Responsive: the dashboard follows its own width (folded menu, split screens, phones). */
+@container (max-width: 1180px) {
+	.weargraph-dash__top {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	}
+
+	.weargraph-dash__top .weargraph-funnel {
+		grid-column: 1 / -1;
+		order: 3;
+	}
+
+	.weargraph-dash__groups {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@container (max-width: 900px) {
+	.weargraph-dash__grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@container (max-width: 620px) {
+	.weargraph-dash__top,
+	.weargraph-dash__groups {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.weargraph-hero .weargraph-stat__value {
+		font-size: 34px;
+	}
+
+	.weargraph-funnel__step {
+		grid-template-columns: minmax(0, 1fr) 3em;
+		gap: 4px 10px;
+	}
+
+	.weargraph-funnel__track {
+		grid-column: 1 / -1;
+		grid-row: 2;
+	}
+
+	/* The chart scales with its width: larger text and dots keep it legible on phones. */
+	.weargraph-chart__axis {
+		font-size: 21px;
+	}
+
+	.weargraph-chart__dot {
+		r: 6px;
+	}
+
+	.weargraph-chart__dot.is-today {
+		r: 8px;
+	}
+
+	.weargraph-activity li {
+		grid-template-columns: minmax(0, 1fr) auto;
+	}
+
+	.weargraph-activity__product {
+		grid-column: 1 / -1;
+		grid-row: 2;
+	}
+
+	.weargraph-activity__product:empty {
+		display: none;
+	}
+
+	.weargraph-dash__readiness a {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 782px) {
+	.wrap.weargraph-app {
+		margin-right: 10px;
+	}
+
+	.weargraph-masthead,
+	.weargraph-page-header {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.weargraph-page-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.weargraph-page-title {
+		font-size: 22px;
+	}
+
+	/* WordPress stacks form rows on phones: label close to its field. */
+	.weargraph-settings__panel .form-table th {
+		padding: 18px 0 6px;
+	}
+
+	.weargraph-settings__panel .form-table td {
+		padding: 0 0 18px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.weargraph-app *,
+	.weargraph-app *::before {
+		transition: none !important;
+	}
+}
+
+/* The hidden attribute must win over the display rules above (e.g. the scan progress box). */
+.weargraph-app [hidden] {
+	display: none !important;
+}
+
+/* ---------- AI providers: cards, panels, tasks ---------- */
+.weargraph-providers {
+	container-type: inline-size;
+}
+
+.weargraph-providers__intro h3 {
+	margin-bottom: 4px;
+}
+
+.weargraph-provider-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr));
+	gap: 12px;
+	margin: 16px 0 26px;
+}
+
+.weargraph-app .weargraph-provider-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 6px;
+	min-height: 132px;
+	padding: 16px 16px 14px;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	background: #fff;
+	color: var(--wg-slate-700);
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+	transition: border-color .15s var(--wg-ease), box-shadow .2s var(--wg-ease), transform .2s var(--wg-ease);
+}
+
+.weargraph-app .weargraph-provider-card:hover {
+	border-color: var(--wg-slate-300);
+	box-shadow: var(--wg-shadow-lift);
+	transform: translateY(-1px);
+}
+
+.weargraph-app .weargraph-provider-card:focus-visible {
+	outline: 0;
+	box-shadow: var(--wg-ring);
+}
+
+.weargraph-app .weargraph-provider-card.is-active {
+	border-color: var(--wg-ink);
+	box-shadow: 0 0 0 1px var(--wg-ink), var(--wg-shadow-lift);
+}
+
+.weargraph-provider-card__mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 12px;
+	background: linear-gradient(145deg, #2b3a66, #1b2440);
+	color: #f0cf8e;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .04em;
+}
+
+.weargraph-provider-card__name {
+	margin-top: 4px;
+	color: var(--wg-ink);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.weargraph-provider-card__status {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--wg-slate-500);
+	font-size: 12px;
+}
+
+.weargraph-provider-card__status::before {
+	content: "";
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--wg-slate-300);
+}
+
+.weargraph-provider-card.is-connected .weargraph-provider-card__status {
+	color: var(--wg-green-text);
+	font-weight: 600;
+}
+
+.weargraph-provider-card.is-connected .weargraph-provider-card__status::before {
+	background: var(--wg-green);
+	box-shadow: 0 0 0 3px var(--wg-green-soft);
+}
+
+.weargraph-provider-card__badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: auto;
+	padding-top: 6px;
+}
+
+.weargraph-provider-card__badges span {
+	padding: 2px 8px;
+	border-radius: 999px;
+	background: var(--wg-slate-100);
+	color: var(--wg-slate-600);
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.weargraph-provider-card__badges span:first-child {
+	background: var(--wg-accent-soft);
+	color: var(--wg-accent-text);
+}
+
+.weargraph-provider-panel {
+	margin: 0 0 20px;
+	padding: 20px 24px 8px;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	background: var(--wg-slate-50);
+}
+
+/* With the picker enhanced, only the chosen provider's panel shows. */
+.weargraph-providers.is-enhanced .weargraph-provider-panel:not(.is-active) {
+	display: none;
+}
+
+.weargraph-provider-panel__head {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid var(--wg-slate-200);
+}
+
+.weargraph-settings__panel .weargraph-provider-panel__head h3 {
+	margin: 0;
+}
+
+.weargraph-provider-panel__head .description {
+	margin: 2px 0 0;
+}
+
+.weargraph-provider-panel .form-table tr {
+	border-bottom-color: var(--wg-slate-200);
+}
+
+.weargraph-key-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.weargraph-key-row input[type="password"],
+.weargraph-key-row input[type="text"],
+.weargraph-key-row select {
+	flex: 1 1 260px;
+	min-width: 0;
+	max-width: 440px;
+}
+
+.weargraph-settings__panel {
+	min-width: 0;
+}
+
+.weargraph-settings__panel select {
+	max-width: 100%;
+}
+
+.weargraph-provider-panel .weargraph-disclosure {
+	margin: 4px 0 16px;
+	padding: 12px 16px;
+	background: #fff;
+}
+
+.weargraph-provider-panel .weargraph-disclosure summary {
+	color: var(--wg-ink);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.weargraph-provider-panel .weargraph-disclosure[open] summary {
+	margin-bottom: 8px;
+}
+
+.weargraph-tasks {
+	margin-top: 8px;
+	padding-top: 6px;
+	border-top: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-tasks select {
+	min-width: 260px;
+}
+
+@container (max-width: 560px) {
+	.weargraph-provider-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.weargraph-provider-panel {
+		padding: 16px 16px 4px;
+	}
+
+	.weargraph-tasks select {
+		min-width: 0;
+		width: 100%;
+	}
+}
+
+.weargraph-radio {
+	display: block;
+	margin: 6px 0;
+}
+
+/* Wide data tables inside a settings tab scroll inside the card on small screens. */
+@media (max-width: 960px) {
+	.weargraph-settings__panel table.widefat {
+		display: block;
+		max-width: 100%;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+}

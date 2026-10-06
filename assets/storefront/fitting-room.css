@@ -1,0 +1,493 @@
+/*
+ * WearGraph fitting room. Scoped under .wgfr; inherits the theme's font and uses a quiet
+ * ink-and-white palette so it sits well in any store. Full-screen on phones, a dialog on
+ * desktop. Themes can re-colour it through the --wgfr-* properties.
+ */
+.wgfr-open { overflow: hidden; }
+
+.wgfr {
+	--wgfr-bg: #fff;
+	--wgfr-fg: #141318;
+	--wgfr-muted: #6c665e;
+	--wgfr-line: #ebe7e1;
+	--wgfr-soft: #f7f5f2;
+	--wgfr-accent: #141318;
+	--wgfr-accent-fg: #fff;
+	--wgfr-ring: #141318;
+	--wgfr-ok: #2c6b4d;
+	--wgfr-warn: #8a5a12;
+	--wgfr-err: #a6321f;
+	--wgfr-radius: 20px;
+	position: fixed;
+	inset: 0;
+	z-index: 999999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	font-family: inherit;
+	color: var(--wgfr-fg);
+	-webkit-font-smoothing: antialiased;
+}
+
+.wgfr[hidden] { display: none; }
+
+.wgfr__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(20, 19, 24, .48);
+	-webkit-backdrop-filter: blur(6px) saturate(120%);
+	backdrop-filter: blur(6px) saturate(120%);
+	animation: wgfr-fade .2s ease-out;
+}
+
+.wgfr__panel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: min(640px, 100%);
+	max-height: min(92vh, 960px);
+	transition: width .25s ease;
+	background: var(--wgfr-bg);
+	border-radius: var(--wgfr-radius);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 30px 80px -20px rgba(20, 19, 24, .45), 0 0 0 1px rgba(20, 19, 24, .06);
+	overflow: hidden;
+	animation: wgfr-rise .28s cubic-bezier(.2, .8, .2, 1);
+}
+
+.wgfr__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 18px 20px 16px 24px;
+	border-bottom: 1px solid var(--wgfr-line);
+}
+
+.wgfr__title {
+	margin: 0;
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: -.01em;
+}
+
+.wgfr__close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 38px;
+	height: 38px;
+	padding: 0;
+	border: 1px solid var(--wgfr-line);
+	border-radius: 50%;
+	background: var(--wgfr-bg);
+	color: inherit;
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+	transition: background .15s ease, border-color .15s ease;
+}
+
+.wgfr__close:hover,
+.wgfr__close:focus-visible {
+	border-color: #d9d3ca;
+	background: var(--wgfr-soft);
+}
+
+.wgfr__close:focus-visible,
+.wgfr a:focus-visible,
+.wgfr input[type="checkbox"]:focus-visible {
+	outline: 2px solid var(--wgfr-ring);
+	outline-offset: 2px;
+}
+
+.wgfr__body:focus { outline: none; }
+
+.wgfr__body {
+	padding: 22px 24px 24px;
+	overflow-y: auto;
+}
+
+.wgfr__step {
+	margin: 0 0 12px;
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: -.005em;
+}
+
+.wgfr__help,
+.wgfr__fine {
+	margin: 8px 0;
+	color: var(--wgfr-muted);
+	font-size: .875rem;
+	line-height: 1.5;
+}
+
+.wgfr__fine { font-size: .8rem; }
+
+.wgfr__guide {
+	display: flex;
+	justify-content: center;
+	padding: 22px 0;
+	background:
+		radial-gradient(70% 90% at 50% 100%, rgba(20, 19, 24, .05), rgba(20, 19, 24, 0) 70%),
+		var(--wgfr-soft);
+	border: 1px solid var(--wgfr-line);
+	border-radius: 16px;
+}
+
+.wgfr__silhouette {
+	width: 90px;
+	height: 150px;
+	background: #cfc8bd;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 100'%3E%3Ccircle cx='30' cy='14' r='10'/%3E%3Cpath d='M12 30h36a6 6 0 0 1 6 6v26h-8V96h-12V70h-8v26H14V62H6V36a6 6 0 0 1 6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 100'%3E%3Ccircle cx='30' cy='14' r='10'/%3E%3Cpath d='M12 30h36a6 6 0 0 1 6 6v26h-8V96h-12V70h-8v26H14V62H6V36a6 6 0 0 1 6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.wgfr__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin-top: 18px;
+}
+
+.wgfr__actions--secondary {
+	margin-top: 12px;
+}
+
+.wgfr__actions--secondary .wgfr__btn {
+	min-height: 36px;
+	padding: 6px 14px;
+	font-size: .85rem;
+	font-weight: 500;
+}
+
+.wgfr__btn {
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 48px;
+	margin: 0;
+	padding: 12px 22px;
+	line-height: 1.2;
+	border: 1px solid #d9d3ca;
+	border-radius: 999px;
+	background: var(--wgfr-bg);
+	color: var(--wgfr-fg);
+	font: inherit;
+	font-weight: 600;
+	letter-spacing: .005em;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.wgfr__btn:hover {
+	border-color: var(--wgfr-fg);
+}
+
+.wgfr__btn:active {
+	transform: translateY(1px);
+}
+
+.wgfr__btn--primary {
+	border-color: var(--wgfr-accent);
+	background: var(--wgfr-accent);
+	color: var(--wgfr-accent-fg);
+	box-shadow: 0 10px 24px -12px rgba(20, 19, 24, .6);
+}
+
+.wgfr__btn--primary:hover {
+	border-color: var(--wgfr-accent);
+	background: #2b2931;
+	color: var(--wgfr-accent-fg);
+}
+
+.wgfr__btn:disabled {
+	opacity: .45;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+.wgfr__btn:focus-visible,
+.wgfr__option:focus-visible,
+.wgfr__select:focus-visible {
+	outline: 2px solid var(--wgfr-ring);
+	outline-offset: 3px;
+}
+
+.wgfr__file {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.wgfr__video,
+.wgfr__preview img,
+.wgfr__result img {
+	display: block;
+	width: 100%;
+	max-height: 60vh;
+	object-fit: contain;
+	background: var(--wgfr-soft);
+	border-radius: 16px;
+}
+
+.wgfr__result {
+	margin: 0;
+	animation: wgfr-reveal .45s ease-out;
+}
+
+.wgfr__caption {
+	margin-top: 8px;
+	color: var(--wgfr-muted);
+	font-size: .75rem;
+	text-align: center;
+}
+
+.wgfr__info {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 12px;
+	margin: 16px 0 4px;
+	font-weight: 600;
+}
+
+.wgfr__price {
+	color: var(--wgfr-muted);
+	font-weight: 500;
+	font-variant-numeric: tabular-nums;
+}
+
+.wgfr__field {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 10px 0;
+	font-size: .9rem;
+}
+
+.wgfr__select {
+	flex: 1;
+	min-height: 44px;
+	padding: 0 12px;
+	border: 1px solid #d9d3ca;
+	border-radius: 12px;
+	background-color: var(--wgfr-bg);
+	color: var(--wgfr-fg);
+	font: inherit;
+}
+
+.wgfr__consent {
+	margin-top: 16px;
+	padding: 14px 16px;
+	background: var(--wgfr-soft);
+	border: 1px solid var(--wgfr-line);
+	border-radius: 14px;
+	font-size: .875rem;
+	line-height: 1.5;
+}
+
+.wgfr__consent label {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	cursor: pointer;
+}
+
+.wgfr__consent input {
+	flex: none;
+	width: 18px;
+	height: 18px;
+	margin-top: .15em;
+	accent-color: var(--wgfr-accent);
+}
+
+.wgfr__options {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 10px;
+}
+
+.wgfr__option {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 10px 8px 8px;
+	border: 1px solid var(--wgfr-line);
+	border-radius: 14px;
+	background: var(--wgfr-bg);
+	color: var(--wgfr-fg);
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+	transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.wgfr__option:hover {
+	border-color: #d9d3ca;
+	box-shadow: 0 6px 18px -12px rgba(20, 19, 24, .5);
+}
+
+.wgfr__option img {
+	width: 44px;
+	height: 44px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.wgfr__option:disabled {
+	opacity: .45;
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+.wgfr__msg {
+	margin: 12px 0;
+	padding: 12px 14px;
+	border-radius: 12px;
+	background: var(--wgfr-soft);
+	font-size: .875rem;
+	line-height: 1.5;
+}
+
+.wgfr__msg--ok { background: #eaf3ee; color: var(--wgfr-ok); }
+.wgfr__msg--warn { background: #fbf2e1; color: var(--wgfr-warn); }
+.wgfr__msg--error { background: #fbebe8; color: var(--wgfr-err); }
+
+/* The result: wide, image on the left, product and actions on the right. */
+.wgfr__panel[data-view="result"] {
+	width: min(1040px, 100%);
+}
+
+@media (min-width: 820px) {
+	.wgfr__panel[data-view="result"] .wgfr__body {
+		display: grid;
+		grid-template-columns: minmax(0, 1.1fr) minmax(300px, 1fr);
+		column-gap: 32px;
+		align-content: start;
+		align-items: start;
+		padding: 26px 30px 30px;
+	}
+
+	.wgfr__panel[data-view="result"] .wgfr__body > * {
+		grid-column: 2;
+		min-width: 0;
+	}
+
+	.wgfr__panel[data-view="result"] .wgfr__body > .wgfr__result {
+		position: sticky;
+		top: 0;
+		grid-column: 1;
+		grid-row: 1 / span 40;
+	}
+
+	.wgfr__panel[data-view="result"] .wgfr__result img {
+		max-height: min(72vh, 760px);
+	}
+
+	.wgfr__panel[data-view="result"] .wgfr__info {
+		margin-top: 4px;
+		font-size: 1.15rem;
+	}
+
+	.wgfr__panel[data-view="result"] .wgfr__actions .wgfr__btn {
+		flex: 1 1 auto;
+	}
+}
+
+/* Making the preview: a quiet shimmer card with the spinner at its heart. */
+.wgfr__wait {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	padding: 56px 16px;
+	overflow: hidden;
+	border-radius: 16px;
+	background: var(--wgfr-soft);
+	color: var(--wgfr-muted);
+	text-align: center;
+}
+
+.wgfr__wait::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .7) 50%, rgba(255, 255, 255, 0) 70%);
+	transform: translateX(-100%);
+	animation: wgfr-shimmer 1.6s ease-in-out infinite;
+}
+
+.wgfr__wait > * {
+	position: relative;
+}
+
+.wgfr__spinner {
+	width: 36px;
+	height: 36px;
+	border: 2px solid rgba(20, 19, 24, .12);
+	border-top-color: var(--wgfr-accent);
+	border-radius: 50%;
+	animation: wgfr-spin .9s linear infinite;
+}
+
+@keyframes wgfr-spin { to { transform: rotate(360deg); } }
+@keyframes wgfr-shimmer { to { transform: translateX(100%); } }
+@keyframes wgfr-fade { from { opacity: 0; } }
+@keyframes wgfr-rise { from { opacity: 0; transform: translateY(12px) scale(.985); } }
+@keyframes wgfr-reveal { from { opacity: 0; transform: scale(.99); } }
+
+@media (prefers-reduced-motion: reduce) {
+	.wgfr__spinner { animation-duration: 3s; }
+	.wgfr__panel {
+		transition: none;
+	}
+
+	.wgfr__panel,
+	.wgfr__backdrop,
+	.wgfr__result,
+	.wgfr__wait::before { animation: none; }
+	.wgfr__btn,
+	.wgfr__option { transition: none; }
+}
+
+@media (max-width: 600px) {
+	.wgfr {
+		padding: 0;
+	}
+
+	.wgfr__panel {
+		width: 100%;
+		height: 100%;
+		max-height: none;
+		border-radius: 0;
+		animation: wgfr-fade .2s ease-out;
+	}
+
+	.wgfr__head {
+		padding: 14px 16px 12px 20px;
+	}
+
+	.wgfr__body {
+		padding: 18px 20px 24px;
+	}
+
+	.wgfr__actions .wgfr__btn { flex: 1 1 auto; }
+}
+
+/* The hidden attribute must win over .wgfr { display: flex }, or closing would leave the dialog on screen. */
+.wgfr[hidden],
+.wgfr [hidden] {
+	display: none !important;
+}

@@ -1,0 +1,398 @@
+/*
+ * WearGraph Studio metabox (product edit screen). Tokens, fields and buttons come from
+ * admin.css (loaded first, scoped to .weargraph-studio).
+ */
+.weargraph-studio {
+	color: var(--wg-slate-700);
+}
+
+.weargraph-studio__notice {
+	margin: 8px 0 14px;
+	padding: 10px 14px;
+	border-radius: var(--wg-radius-sm);
+	background: var(--wg-amber-soft);
+	border: 1px solid #efdcb8;
+	color: var(--wg-amber-text);
+}
+
+/* Tabs: a segmented control. */
+.weargraph-studio__tabs {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 2px;
+	margin: 6px 0 20px;
+	padding: 4px;
+	border-radius: 12px;
+	background: var(--wg-slate-100);
+}
+
+.weargraph-studio__tab {
+	padding: 7px 16px;
+	border: 0;
+	border-radius: var(--wg-radius-sm);
+	background: none;
+	color: var(--wg-slate-500);
+	font-weight: 600;
+	cursor: pointer;
+	transition: background .15s var(--wg-ease), color .15s var(--wg-ease), box-shadow .15s var(--wg-ease);
+}
+
+.weargraph-studio__tab:hover {
+	color: var(--wg-ink);
+}
+
+.weargraph-studio__tab.is-active {
+	background: #fff;
+	color: var(--wg-ink);
+	box-shadow: 0 1px 2px rgba(20, 19, 24, .08), 0 0 0 1px rgba(20, 19, 24, .04);
+}
+
+.weargraph-studio__tab:focus-visible {
+	outline: 0;
+	box-shadow: var(--wg-ring);
+}
+
+.weargraph-studio__empty {
+	color: var(--wg-slate-500);
+}
+
+.weargraph-field {
+	display: block;
+	margin: 0 0 16px;
+	color: var(--wg-ink);
+	font-weight: 600;
+}
+
+.weargraph-field select,
+.weargraph-field textarea {
+	display: block;
+	width: 100%;
+	max-width: none;
+	margin-top: 6px;
+	font-weight: 400;
+}
+
+.weargraph-field legend {
+	margin-bottom: 8px;
+	color: var(--wg-ink);
+	font-weight: 600;
+}
+
+.weargraph-field fieldset label,
+fieldset.weargraph-field > label {
+	display: block;
+	margin: 4px 0;
+	color: var(--wg-slate-700);
+	font-weight: 400;
+}
+
+.weargraph-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	gap: 4px 18px;
+}
+
+.weargraph-background.is-disabled {
+	opacity: .45;
+}
+
+/* Reference images: a chosen one gets an ink ring. */
+.weargraph-refs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.weargraph-ref {
+	position: relative;
+	cursor: pointer;
+}
+
+.weargraph-ref img {
+	display: block;
+	width: 84px;
+	height: 84px;
+	object-fit: cover;
+	border-radius: var(--wg-radius-md);
+	border: 1px solid var(--wg-slate-200);
+	transition: box-shadow .15s var(--wg-ease), transform .15s var(--wg-ease);
+}
+
+.weargraph-ref:hover img {
+	transform: translateY(-1px);
+}
+
+.weargraph-ref input {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	z-index: 1;
+	margin: 0;
+}
+
+.weargraph-ref input:checked + img {
+	border-color: var(--wg-ink);
+	box-shadow: 0 0 0 2px var(--wg-ink), 0 0 0 5px rgba(176, 141, 87, .25);
+}
+
+.weargraph-ref input:focus-visible + img {
+	box-shadow: var(--wg-ring);
+}
+
+.weargraph-advanced {
+	margin: 4px 0 16px;
+	padding: 12px 16px;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-md);
+	background: var(--wg-slate-50);
+}
+
+.weargraph-advanced summary {
+	color: var(--wg-ink);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.weargraph-advanced[open] summary {
+	margin-bottom: 12px;
+}
+
+.weargraph-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin: 20px 0 8px;
+	padding-top: 18px;
+	border-top: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-status { color: var(--wg-slate-500); }
+.weargraph-status.is-ok { color: var(--wg-green-text); }
+.weargraph-status.is-error { color: var(--wg-red-text); }
+.weargraph-status.is-info { color: var(--wg-slate-600); }
+
+.weargraph-result {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 14px;
+	margin: 16px 0;
+}
+
+.weargraph-result__card {
+	padding: 10px;
+	border: 1px solid var(--wg-slate-200);
+	border-radius: var(--wg-radius-lg);
+	background: #fff;
+	box-shadow: var(--wg-shadow-lift);
+}
+
+.weargraph-result__card img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--wg-radius-sm);
+	background: var(--wg-slate-100);
+}
+
+.weargraph-result__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 10px;
+}
+
+.weargraph-history__title {
+	margin: 26px 0 6px;
+	color: var(--wg-slate-500);
+	font: var(--wg-label);
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.weargraph-history__list {
+	margin: 0;
+}
+
+.weargraph-history__item {
+	display: grid;
+	grid-template-columns: 56px 1fr auto;
+	align-items: center;
+	gap: 14px;
+	margin: 0;
+	padding: 10px 0;
+	border-top: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-history__thumb {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	overflow: hidden;
+	border-radius: var(--wg-radius-sm);
+	background: var(--wg-slate-100);
+	box-shadow: inset 0 0 0 1px rgba(20, 19, 24, .06);
+	color: var(--wg-slate-500);
+	font-size: 11px;
+	text-align: center;
+}
+
+.weargraph-history__thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.weargraph-history__info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+	color: var(--wg-ink);
+}
+
+.weargraph-history__info span {
+	color: var(--wg-slate-500);
+	font-size: 12px;
+}
+
+.weargraph-history__info .is-error { color: var(--wg-red-text); }
+
+.weargraph-history__actions {
+	display: flex;
+	gap: 6px;
+}
+
+.weargraph-originals-note {
+	margin-top: 14px;
+	color: var(--wg-slate-500);
+}
+
+.weargraph-stats {
+	color: var(--wg-slate-500);
+}
+
+.weargraph-alts {
+	margin: 0;
+}
+
+.weargraph-alt {
+	display: grid;
+	grid-template-columns: 72px 1fr;
+	gap: 14px;
+	padding: 12px 0;
+	border-top: 1px solid var(--wg-slate-100);
+}
+
+.weargraph-alt img {
+	width: 72px;
+	height: 72px;
+	object-fit: cover;
+	border-radius: var(--wg-radius-sm);
+}
+
+.weargraph-alt input[type="text"] {
+	width: 100%;
+}
+
+.weargraph-alt__label {
+	display: block;
+	margin-bottom: 6px;
+	color: var(--wg-ink);
+	font-weight: 600;
+}
+
+.weargraph-badge {
+	margin-left: 6px;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.weargraph-badge--warn {
+	background: var(--wg-amber-soft);
+	color: var(--wg-amber-text);
+}
+
+@media (max-width: 600px) {
+	.weargraph-history__item {
+		grid-template-columns: 56px 1fr;
+	}
+
+	.weargraph-history__actions {
+		grid-column: 1 / -1;
+	}
+}
+
+/* Try-On tab */
+.weargraph-tryon-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+
+.weargraph-tryon-state { margin-left: auto; }
+
+.weargraph-studio .weargraph-problems {
+	margin: 6px 0 14px;
+	padding-left: 18px;
+	list-style: disc;
+}
+
+.weargraph-studio .weargraph-muted { color: var(--wg-slate-500); }
+
+.weargraph-studio .weargraph-score {
+	color: var(--wg-slate-500);
+	font-size: 12px;
+}
+
+.weargraph-ref__score {
+	position: absolute;
+	right: 6px;
+	bottom: 6px;
+	padding: 1px 6px;
+	border-radius: 6px;
+	background: rgba(20, 19, 24, .78);
+	color: #fff;
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+}
+
+.weargraph-variants {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin: 0 0 14px;
+}
+
+.weargraph-variants li {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.weargraph-variants img {
+	width: 32px;
+	height: 32px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+/* The hidden attribute must win over display rules (result grid, Cancel button, tab panels). */
+.weargraph-studio [hidden] {
+	display: none !important;
+}
+
+/* History pager (shown when an extension turns paging on). */
+.weargraph-history__pager {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 12px;
+}

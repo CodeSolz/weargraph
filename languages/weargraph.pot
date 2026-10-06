@@ -1,0 +1,2615 @@
+# Copyright (C) 2026 CodeSolz
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WearGraph – AI Virtual Try-On & Product Studio for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/weargraph\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-01T14:16:02+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: weargraph\n"
+
+#. Plugin Name of the plugin
+#: weargraph.php
+msgid "WearGraph – AI Virtual Try-On & Product Studio for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: weargraph.php
+msgid "https://codesolz.net/our-products/wordpress-plugin/weargraph"
+msgstr ""
+
+#. Description of the plugin
+#: weargraph.php
+msgid "Let shoppers see products on themselves with an AI fitting room, generate on-model product images with your own AI key, and find out which products are ready for virtual try-on."
+msgstr ""
+
+#. Author of the plugin
+#: weargraph.php
+msgid "CodeSolz"
+msgstr ""
+
+#. Author URI of the plugin
+#: weargraph.php
+msgid "https://codesolz.net"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:74
+msgid "WP-Cron is turned off on this site (DISABLE_WP_CRON). Ask your host to run wp-cron.php every few minutes from a server cron job."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:75
+msgid "Your site may be blocking requests to itself. Check Tools → Site Health for \"loopback request\" problems."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:79
+msgid "WearGraph background tasks are not running, so catalog scans, image generation and the privacy clean-up are waiting."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:90
+#: includes/Admin/AdminMenu.php:91
+#: includes/Admin/AdminMenu.php:214
+#: includes/Admin/AdminMenu.php:243
+msgid "WearGraph"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:101
+#: includes/Admin/AdminMenu.php:102
+#: includes/Admin/AdminMenu.php:198
+#: includes/Admin/Dashboard.php:275
+#: includes/Admin/PluginLinks.php:55
+msgid "Dashboard"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:197
+#: includes/Admin/Dashboard.php:274
+msgid "WearGraph Dashboard"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:198
+msgid "AI fitting room, product studio and catalog readiness for your store."
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:201
+#: includes/Admin/Dashboard.php:491
+msgid "Welcome to WearGraph"
+msgstr ""
+
+#: includes/Admin/AdminMenu.php:202
+#: includes/Admin/Dashboard.php:492
+msgid "Connect your AI provider key and scan your catalog to see which products are ready for virtual try-on."
+msgstr ""
+
+#. translators: %s: plugin version
+#: includes/Admin/AdminMenu.php:252
+msgid "Version %s"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:80
+#: includes/Admin/CatalogPage.php:205
+msgid "Catalog"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:108
+msgid "You are not allowed to change the catalog."
+msgstr ""
+
+#. translators: %d: number of products
+#: includes/Admin/CatalogPage.php:162
+msgid "%d product updated."
+msgid_plural "%d products updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of products
+#: includes/Admin/CatalogPage.php:177
+msgid "%s product has not been checked yet. Click \"Scan catalog\" to check it (no AI, no cost)."
+msgid_plural "%s products have not been checked yet. Click \"Scan catalog\" to check them (no AI, no cost)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/CatalogPage.php:199
+msgid "Scan catalog"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:200
+msgid "Rescan everything"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:203
+msgid "WearGraph Catalog"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:206
+msgid "Which products are ready for virtual try-on, and what to fix for the rest."
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:214
+#: includes/Catalog/CatalogMessages.php:25
+msgid "Try-On Ready"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:215
+msgid "Need a better image"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:216
+msgid "Need review"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:217
+#: includes/Catalog/CatalogMessages.php:28
+msgid "Not supported"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:218
+msgid "Not scanned yet"
+msgstr ""
+
+#. translators: 1: ready products, 2: all products
+#: includes/Admin/CatalogPage.php:233
+msgid "%1$s of %2$s products are Try-On Ready."
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:243
+msgid "Stop"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:248
+msgid "Your server has no image library (GD or Imagick) enabled, so images are judged by size only. Ask your host to enable the PHP GD extension for background and framing checks; WordPress also needs it to create thumbnails."
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:270
+msgid "Search products"
+msgstr ""
+
+#. translators: 1: processed, 2: total
+#: includes/Admin/CatalogPage.php:300
+msgid "Scanning… %1$s of %2$s products"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:301
+msgid "Scan complete. Reloading…"
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:302
+msgid "Could not start the scan. Please try again."
+msgstr ""
+
+#: includes/Admin/CatalogPage.php:303
+msgid "Re-check every product, including unchanged ones?"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:64
+#: assets/blocks/try-on-button/editor.js:26
+msgid "Product"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:65
+#: includes/Providers/Flux/FluxProvider.php:122
+#: includes/Providers/Gemini/GeminiProvider.php:85
+#: includes/Providers/OpenAI/OpenAIProvider.php:79
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:80
+#: includes/Providers/Xai/XaiProvider.php:107
+msgid "Try-on"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:66
+msgid "Garment"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:67
+msgid "Source image"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:68
+#: includes/Admin/ProductTryOnTab.php:88
+msgid "Readiness"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:69
+msgid "Try-ons"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:70
+msgid "Last scanned"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:103
+msgid "All"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:137
+msgid "Turn try-on on"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:138
+msgid "Turn try-on off"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:139
+msgid "Try-on: automatic"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:140
+msgid "Rescan"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:141
+msgid "Change category…"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:142
+msgid "Change layer…"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:197
+msgid "New category"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:198
+msgid "— Category —"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:203
+msgid "New layer"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:204
+msgid "— Layer —"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:255
+msgid "Your store has no products yet. Add clothing products in WooCommerce, then scan your catalog here."
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:259
+msgid "No products match this filter."
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:262
+msgid "No products here. Run a scan to check your catalog."
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:308
+msgid "On"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:308
+#: includes/Admin/ProductTryOnTab.php:75
+msgid "Off"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:309
+msgid "auto"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:309
+#: includes/Admin/CatalogTable.php:328
+msgid "set by you"
+msgstr ""
+
+#. translators: %d: number of further problems
+#: includes/Admin/CatalogTable.php:372
+msgid "+%d more"
+msgstr ""
+
+#: includes/Admin/CatalogTable.php:396
+msgid "Never"
+msgstr ""
+
+#. translators: %s: human time difference, e.g. "5 mins"
+#: includes/Admin/CatalogTable.php:400
+#: includes/Admin/Dashboard.php:670
+msgid "%s ago"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:145
+msgid "Try-ons today"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:147
+msgid "Previews shown to shoppers"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:150
+msgid "Shoppers who tried on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:152
+msgid "Last 7 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:155
+#: includes/Admin/Dashboard.php:779
+msgid "Added to cart after try-on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:157
+msgid "Last 30 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:160
+msgid "Checkouts after try-on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:162
+msgid "Shoppers who reached checkout, last 30 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:165
+msgid "Orders after try-on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:167
+msgid "Paid orders with a tried-on product, last 30 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:170
+msgid "Sales after try-on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:172
+msgid "Tried-on items in paid orders, last 30 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:175
+msgid "Images generated"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:177
+msgid "Studio and try-on, last 30 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:180
+msgid "Estimated AI cost"
+msgstr ""
+
+#. translators: %s: amount in US dollars
+#: includes/Admin/Dashboard.php:182
+#: includes/Admin/Dashboard.php:366
+msgid "$%s"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:183
+msgid "Paid to your AI provider, last 30 days (USD)"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:186
+msgid "Failed generations"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:188
+msgid "Last 7 days. Failed attempts do not use your quota."
+msgstr ""
+
+#: includes/Admin/Dashboard.php:275
+msgid "How shoppers use your fitting room, and what your AI provider costs."
+msgstr ""
+
+#. translators: 1: products ready, 2: all products
+#: includes/Admin/Dashboard.php:289
+msgid "%1$s of %2$s products are ready for try-on."
+msgstr ""
+
+#: includes/Admin/Dashboard.php:295
+msgid "Open Catalog"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:309
+msgid "Engaged shoppers"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:310
+msgid "Conversion"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:311
+msgid "System health"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:312
+msgid "Efficiency"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:364
+msgid "AI cost per image"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:367
+msgid "Last 30 days (USD)"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:421
+#: includes/Admin/Dashboard.php:769
+msgid "Fitting room opened"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:422
+msgid "Tried on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:423
+msgid "Added to cart"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:424
+msgid "Ordered"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:431
+msgid "Try-on funnel"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:434
+msgid "opened → ordered"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:450
+msgid "Shopper visits, last 30 days"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:493
+msgid "Connect your AI provider"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:509
+msgid "Try-ons, last 14 days"
+msgstr ""
+
+#. translators: %s: number of try-ons
+#: includes/Admin/Dashboard.php:513
+#: includes/Admin/Dashboard.php:633
+msgid "%s try-on"
+msgid_plural "%s try-ons"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/Dashboard.php:518
+msgid "No try-ons yet. Once shoppers use the fitting room, you will see them here."
+msgstr ""
+
+#. translators: 1: date, 2: number of try-ons
+#: includes/Admin/Dashboard.php:527
+msgid "%1$s: %2$s try-on"
+msgid_plural "%1$s: %2$s try-ons"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/Dashboard.php:622
+msgid "Most tried products"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:624
+msgid "Nothing tried on in the last 30 days."
+msgstr ""
+
+#: includes/Admin/Dashboard.php:652
+msgid "Recent activity"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:654
+msgid "No activity yet."
+msgstr ""
+
+#. translators: %d: product id
+#: includes/Admin/Dashboard.php:749
+msgid "Product #%d"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:770
+msgid "Photo uploaded"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:771
+msgid "Photo accepted"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:772
+msgid "Try-on requested"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:773
+msgid "Try-on shown"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:774
+msgid "Try-on failed"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:775
+msgid "Try-on regenerated"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:776
+msgid "Option changed"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:777
+msgid "Added to a look"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:778
+msgid "Look generated"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:780
+msgid "Checkout started after try-on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:781
+msgid "Bought after try-on"
+msgstr ""
+
+#: includes/Admin/Dashboard.php:782
+msgid "Returned after try-on"
+msgstr ""
+
+#: includes/Admin/Notices.php:83
+msgid "Thanks for installing WearGraph!"
+msgstr ""
+
+#: includes/Admin/Notices.php:87
+msgid "Your AI key is connected. See how shoppers use your fitting room on the WearGraph dashboard."
+msgstr ""
+
+#: includes/Admin/Notices.php:88
+msgid "Connect your Google Gemini API key to start creating try-on previews and product images."
+msgstr ""
+
+#: includes/Admin/Notices.php:91
+msgid "Open the dashboard"
+msgstr ""
+
+#: includes/Admin/Notices.php:91
+msgid "Connect your key"
+msgstr ""
+
+#: includes/Admin/PluginLinks.php:47
+msgid "Upgrade to WearGraph Pro (opens in a new tab)"
+msgstr ""
+
+#: includes/Admin/PluginLinks.php:48
+#: includes/Admin/PluginLinks.php:76
+#: includes/Admin/PluginLinks.php:77
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/Admin/PluginLinks.php:60
+#: includes/Admin/SettingsPage.php:74
+#: includes/Admin/SettingsPage.php:151
+msgid "Settings"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:59
+msgid "Privacy"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:76
+msgid "How long shopper photos are kept"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:79
+msgid "Photos and previews"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:89
+msgid "A clean-up runs every hour and deletes expired photos and previews, from the database and from disk. Shoppers can always delete their own photos straight away from the fitting room."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:95
+msgid "What WearGraph does with shopper photos"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:97
+msgid "A photo is uploaded only after the shopper ticks the consent box."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:98
+msgid "Location data and other hidden information are removed before the photo is stored."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:99
+msgid "The photo is sent only to your AI provider, only to create the preview the shopper asked for. It is never used for anything else, never shared, and never used to train AI by WearGraph."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:100
+msgid "Photos and previews are private files that only the shopper's own browser can open, through links that expire after 10 minutes."
+msgstr ""
+
+#. translators: %s: link to the WordPress privacy policy guide
+#: includes/Admin/PrivacySettingsTab.php:105
+msgid "Suggested text for your privacy policy is available in %s. Logged-in customers' fitting-room data is included in WordPress's Export and Erase Personal Data tools."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:106
+msgid "Settings → Privacy → Policy guide"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:131
+msgid "Delete every shopper photo and preview now? This cannot be undone."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:134
+msgid "Delete all shopper photos now"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:135
+msgid "Removes every shopper photo, preview and fitting-room session immediately. Product images and your studio images are not affected."
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:136
+msgid "Delete all shopper photos"
+msgstr ""
+
+#: includes/Admin/PrivacySettingsTab.php:146
+#: includes/Admin/ProvidersPanel.php:470
+#: includes/Admin/SettingsPage.php:360
+msgid "You are not allowed to do this."
+msgstr ""
+
+#. translators: %d: number of files
+#: includes/Admin/PrivacySettingsTab.php:178
+msgid "%d shopper file deleted."
+msgid_plural "%d shopper files deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/ProductPanel.php:69
+msgid "WearGraph Studio"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:80
+msgid "Generate"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:84
+msgid "Images & alt text"
+msgstr ""
+
+#. translators: %s: link to settings
+#: includes/Admin/ProductPanel.php:121
+msgid "Add your AI provider key in %s to start generating images."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:122
+msgid "WearGraph → Settings"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:158
+msgid "Add a product image first (Product image or Product gallery). WearGraph works from your own product photos."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:165
+msgid "Product images to work from"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:174
+msgid "Several angles of the same product give more accurate results."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:179
+msgid "Shot"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:180
+msgid "Product only"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:181
+msgid "Worn by a model"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:182
+msgid "Model"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:186
+msgid "Scene"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:189
+msgid "Background"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:192
+msgid "Style"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:195
+msgid "Aspect ratio"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:198
+msgid "Resolution"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:204
+msgid "More options"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:205
+msgid "Extra direction (optional)"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:206
+msgid "e.g. model holding a coffee cup, sleeves rolled up"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:208
+msgid "Avoid (optional)"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:209
+msgid "e.g. mannequin, text, busy background"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:224
+msgid "Generate image"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:225
+#: includes/Storefront/Strings.php:33
+msgid "Cancel"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:231
+msgid "Recent results for this product"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:232
+#: includes/Admin/ProductTryOnTab.php:53
+#: includes/Storefront/Strings.php:26
+msgid "Loading…"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:233
+msgid "Your original product photos are never changed. Saved results are added as new images."
+msgstr ""
+
+#. translators: 1: number of generated images, 2: total AI cost in USD
+#: includes/Admin/ProductPanel.php:252
+msgid "%1$d images generated for this product · AI cost so far: $%2$s"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:259
+msgid "This product has no images yet."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:273
+#: includes/Providers/Gemini/GeminiProvider.php:85
+#: includes/Providers/OpenAI/OpenAIProvider.php:79
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:80
+msgid "Alt text"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:275
+msgid "missing"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:281
+msgid "Suggest with AI"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:282
+msgid "Save alt text"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:327
+msgid "Queued…"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:328
+msgid "Generating… this usually takes 10–30 seconds."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:329
+msgid "Still working. You can leave this page; the result will appear under Recent results."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:330
+msgid "Cancelled."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:331
+msgid "Generation failed."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:332
+msgid "Could not reach your site. Please try again."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:333
+msgid "Choose at least one product image."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:334
+msgid "Same settings as an earlier result, shown without a new AI call."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:335
+msgid "Add to gallery"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:336
+msgid "Set as product image"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:337
+msgid "Save to Media Library"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:338
+msgid "Regenerate"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:339
+#: includes/Storefront/AccountPage.php:319
+msgid "Delete"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:340
+#: includes/Admin/ProvidersPanel.php:195
+#: includes/Admin/SettingsPage.php:405
+msgid "Show"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:341
+msgid "Delete this result? Images already saved to the Media Library are kept."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:342
+msgid "Saved."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:343
+msgid "Added to the gallery. Save or update the product to see it in the gallery box."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:344
+msgid "Set as product image. Reload the page to see it in the Product image box."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:345
+msgid "No results yet."
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:346
+msgid "Preview expired"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:347
+msgid "Newer"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:348
+msgid "Older"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:349
+msgid "Thinking…"
+msgstr ""
+
+#: includes/Admin/ProductPanel.php:350
+msgid "Suggestion ready — review it, then save."
+msgstr ""
+
+#. translators: %s: cost in USD
+#: includes/Admin/ProductPanel.php:352
+msgid "AI cost: $%s"
+msgstr ""
+
+#. translators: 1: resolution, 2: approximate price in USD
+#: includes/Admin/ProductPanel.php:376
+msgid "%1$s (~$%2$s)"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:37
+#: includes/Admin/TryOnSettingsTab.php:36
+msgid "Try-On"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:68
+msgid "This product has not been checked yet."
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:69
+msgid "Check now"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:70
+msgid "Check again"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:71
+msgid "Reset everything to automatic"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:72
+msgid "Try-on for this product"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:73
+msgid "Automatic (on when Try-On Ready)"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:74
+msgid "Always on"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:76
+msgid "Garment category"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:77
+msgid "Layer"
+msgstr ""
+
+#. translators: %s: automatically detected value
+#: includes/Admin/ProductTryOnTab.php:79
+msgid "Automatic (%s)"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:80
+msgid "Image used for try-on"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:81
+msgid "Choose automatically"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:82
+msgid "Colour variants"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:83
+msgid "Try-on is ON for this product."
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:84
+msgid "Try-on is OFF for this product."
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:85
+msgid "Shoppers see the button only when try-on is also switched on for the store (WearGraph → Settings → Try-On)."
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:86
+msgid "Saving…"
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:87
+msgid "Saved and re-checked."
+msgstr ""
+
+#: includes/Admin/ProductTryOnTab.php:89
+msgid "No problems found."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:121
+msgid "Your AI providers"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:122
+msgid "Connect one or more providers with your own API keys. You pay each provider directly; keys are stored encrypted and never shown again."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:125
+msgid "AI providers"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:135
+msgid "Connected"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:135
+msgid "Not connected"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:180
+msgid "API key"
+msgstr ""
+
+#. translators: %s: last characters of the key, e.g. ••••1a2b
+#: includes/Admin/ProvidersPanel.php:186
+msgid "A key is saved (%s)."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:190
+msgid "No key saved yet."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:194
+msgid "Leave blank to keep the saved key"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:194
+msgid "Paste your API key"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:198
+msgid "Get a key"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:198
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:206
+msgid "Remove the saved key"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:214
+msgid "Connection"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:216
+msgid "Test connection"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:222
+msgid "Save a key first, then test it. Testing does not use any credits."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:223
+msgid "Checks the saved key without generating anything, so it does not use credits."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:232
+msgid "What is shared with this provider"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:237
+msgid "Terms of service"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:241
+#: includes/Storefront/Strings.php:42
+msgid "Privacy policy"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:279
+msgid "Refresh models"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:309
+msgid "Product images (Studio)"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:310
+msgid "Generating and editing product photos."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:313
+#: includes/Admin/TryOnSettingsTab.php:71
+msgid "Virtual try-on"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:314
+msgid "Shoppers' try-on previews."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:317
+msgid "Alt text and image checks"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:318
+msgid "Describing and checking images."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:323
+msgid "Use for"
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:324
+msgid "Choose a provider for each job, or leave it on automatic: the main provider when it can do the job, otherwise the first connected one that can."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:338
+msgid "Automatic"
+msgstr ""
+
+#. translators: %s: provider name
+#: includes/Admin/ProvidersPanel.php:347
+msgid "%s (add a key first)"
+msgstr ""
+
+#. translators: %s: provider name
+#: includes/Admin/ProvidersPanel.php:358
+msgid "Now done by %s."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:360
+msgid "No connected provider can do this yet."
+msgstr ""
+
+#. translators: %s: provider name
+#: includes/Admin/ProvidersPanel.php:403
+msgid "That does not look like a %s key, so it was not saved. Check that you copied the whole key."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:477
+msgid "This provider has no model list to refresh."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:480
+#: includes/Admin/SettingsPage.php:366
+msgid "Save an API key first."
+msgstr ""
+
+#: includes/Admin/ProvidersPanel.php:489
+msgid "The provider returned no models for your key."
+msgstr ""
+
+#. translators: %d: number of models
+#: includes/Admin/ProvidersPanel.php:497
+msgid "%d model available."
+msgid_plural "%d models available."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/SettingsPage.php:90
+msgid "General"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:100
+msgid "AI Provider"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:150
+msgid "WearGraph Settings"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:151
+msgid "Connect your AI provider and control spending, privacy and storefront behaviour."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:154
+msgid "Settings sections"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:170
+msgid "Save changes"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:210
+msgid "Spending limits"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:211
+msgid "Requests that would go over these limits are refused before anything is sent to your AI provider."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:214
+msgid "Maximum cost per request (USD)"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:217
+msgid "Includes automatic retries."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:221
+msgid "Daily spending cap (USD)"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:226
+msgid "Data"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:229
+msgid "Delete data on uninstall"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:232
+msgid "Remove all WearGraph settings, history and statistics when the plugin is deleted."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:233
+msgid "Shopper photos are always deleted when the plugin is deleted, whatever this setting says."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:260
+msgid "You are not allowed to change WearGraph settings."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:347
+msgid "Settings saved."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:403
+msgid "Testing…"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:404
+msgid "Loading models…"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:406
+msgid "Hide"
+msgstr ""
+
+#. translators: %d: milliseconds
+#: includes/Admin/SettingsPage.php:408
+msgid "(%d ms)"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:409
+msgid "The test could not run. Please reload the page and try again."
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:62
+msgid "After the Add to cart button"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:63
+msgid "Before the Add to cart area"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:64
+msgid "After the product meta (SKU, categories)"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:65
+msgid "Below the product summary"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:66
+msgid "Nowhere automatically (I use the block or shortcode)"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:74
+msgid "Show the Try On button to shoppers"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:76
+msgid "Preview mode: show it to store managers only (you must be logged in)"
+msgstr ""
+
+#. translators: %s: link to the Catalog screen
+#: includes/Admin/TryOnSettingsTab.php:81
+msgid "It appears only on products that are switched on in %s (Try-On Ready products are on automatically)."
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:82
+msgid "WearGraph → Catalog"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:89
+msgid "Button text"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:99
+msgid "Button position"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:106
+msgid "Block themes can also place the \"Try On button\" block in the product template, or use the shortcode [weargraph_try_on]."
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:110
+msgid "Shop pages"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:112
+msgid "Also show a small Try On button on shop and category pages"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:115
+msgid "Theme fallback"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:118
+msgid "If my theme hides the button, place it after this element:"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:120
+msgid "Only for themes that do not use the standard WooCommerce product hooks."
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:125
+msgid "Shopper consent"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:128
+msgid "Consent text"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:131
+msgid "Shoppers must tick this before their photo is uploaded. Leave empty to use the default shown. A link to your privacy policy is added automatically."
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:136
+msgid "Limits per shopper"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:139
+msgid "Previews per visit"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:143
+msgid "\"Try again\" per visit"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:147
+msgid "Previews per connection per day"
+msgstr ""
+
+#: includes/Admin/TryOnSettingsTab.php:150
+msgid "Stops one visitor or bot from using up your AI budget. The daily spending cap in General applies as well."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:26
+msgid "Needs better image"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:27
+msgid "Needs review"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:29
+msgid "Not scanned"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:42
+msgid "T-shirt"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:43
+msgid "Shirt"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:44
+msgid "Blouse"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:45
+msgid "Top"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:46
+msgid "Polo"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:47
+msgid "Sweater"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:48
+msgid "Hoodie / sweatshirt"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:49
+msgid "Jacket"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:50
+msgid "Coat"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:51
+msgid "Blazer"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:52
+msgid "Cardigan"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:53
+msgid "Vest / gilet"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:54
+msgid "Trousers"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:55
+msgid "Jeans"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:56
+msgid "Shorts"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:57
+msgid "Skirt"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:58
+msgid "Leggings"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:59
+msgid "Dress"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:60
+msgid "Jumpsuit"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:61
+msgid "Shoes"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:62
+msgid "Hat / cap"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:63
+msgid "Eyewear"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:64
+msgid "Bag"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:65
+msgid "Watch"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:66
+msgid "Jewellery"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:67
+msgid "Scarf"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:68
+msgid "Belt"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:69
+msgid "Swimwear"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:70
+msgid "Lingerie / underwear"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:71
+msgid "Socks"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:72
+msgid "Not clothing"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:92
+msgid "Inner layer (worn next to the body)"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:93
+msgid "Outer layer (worn over other clothes)"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:94
+msgid "Base (bottoms, dresses, shoes)"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:95
+msgid "Accessory"
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:109
+msgid "No product image yet."
+msgstr ""
+
+#. translators: 1: width px, 2: height px
+#: includes/Catalog/CatalogMessages.php:112
+msgid "The best image is small (%1$d×%2$d px). Use at least 800 px on the short side."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:114
+msgid "The image is very wide or very tall. A portrait or square photo works best."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:116
+msgid "Busy background. A plain background gives more accurate try-ons."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:118
+msgid "The product fills only a small part of the photo. Crop closer."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:120
+msgid "The best photo shows the product on a person. A product-only photo usually gives better results."
+msgstr ""
+
+#. translators: %s: list of variant names, e.g. "Blue, Green"
+#: includes/Catalog/CatalogMessages.php:123
+msgid "%s has no photo of its own, so try-on would show a different colour."
+msgstr ""
+
+#. translators: %s: list of variant names
+#: includes/Catalog/CatalogMessages.php:126
+msgid "These colours use the same photo: %s."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:128
+msgid "Not sure what kind of garment this is. Please confirm the category."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:130
+msgid "Accessory previews are experimental. Test before enabling."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:132
+msgid "Swimwear and underwear are not offered for try-on."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:134
+msgid "This does not look like something that can be worn."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:136
+msgid "This kind of item cannot be shown on a person yet."
+msgstr ""
+
+#: includes/Catalog/CatalogMessages.php:139
+msgid "Grouped products are containers; try-on is set on each product inside the group."
+msgstr ""
+
+#. translators: %s: WooCommerce product type
+#: includes/Catalog/CatalogMessages.php:141
+msgid "Products of type \"%s\" are not supported for try-on."
+msgstr ""
+
+#: includes/Jobs/CleanupJob.php:127
+msgid "This request took too long and was stopped. Please try again."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:140
+msgid "This kind of generation is no longer available."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:148
+msgid "An image for this request is no longer available."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:167
+msgid "Stopped: this request reached the spending limit."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:202
+#: includes/Jobs/GenerationJob.php:233
+#: includes/Jobs/GenerationJob.php:316
+msgid "Something went wrong while generating. Please try again."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:293
+msgid "This request can no longer be completed."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:322
+msgid "The AI provider took too long. Please try again later."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:413
+msgid "The result did not pass the quality check. Please try another photo."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:421
+msgid "The result could not be saved. Please check that the uploads folder is writable."
+msgstr ""
+
+#: includes/Jobs/GenerationJob.php:425
+msgid "The AI provider returned an empty result. Please try again."
+msgstr ""
+
+#. translators: %s: minimum WooCommerce version
+#: includes/Plugin.php:317
+msgid "WearGraph requires WooCommerce %s or higher to be installed and active."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:83
+#: includes/Privacy/PersonalData.php:98
+msgid "WearGraph virtual try-on"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:129
+msgid "Visit started"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:133
+msgid "Photo consent given"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:134
+msgid "terms version"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:134
+msgid "No"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:137
+msgid "Previews created"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:141
+msgid "Photos and previews still stored"
+msgstr ""
+
+#. translators: %d: number of files
+#: includes/Privacy/PersonalData.php:144
+msgid "%d (deleted automatically; they can also be erased on request)"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:152
+msgid "Preview requested"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:159
+#: includes/Privacy/PersonalData.php:276
+#: includes/Storefront/Strings.php:24
+msgid "Virtual fitting room"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:160
+msgid "Visits to the virtual fitting room while logged in."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:275
+msgid "Suggested text for your privacy policy if you use the WearGraph virtual fitting room. Adjust it to your store."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:277
+msgid "Suggested text:"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:278
+msgid "If you use our virtual fitting room, you upload a photo of yourself so we can show you a preview of how a product might look on you. We ask for your consent before the photo is uploaded."
+msgstr ""
+
+#. translators: %s: AI provider name, e.g. Google Gemini
+#: includes/Privacy/PersonalData.php:282
+msgid "Your photo is sent securely to our AI service provider, %s, only to create the preview you asked for. We do not use your photo for anything else, and we do not share it with anyone else."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:283
+msgid "[name of your AI provider]"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:287
+msgid "Your photo and previews are deleted automatically within 24 hours. You can delete them yourself at any time with \"Delete my photos\" in the fitting room."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:288
+msgid "Your photo and previews are deleted automatically when your visit ends. You can delete them yourself at any time with \"Delete my photos\" in the fitting room."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:289
+msgid "The fitting room uses a technical cookie (weargraph_session) to keep your photo linked to your visit. It is removed when the visit ends and is not used for tracking."
+msgstr ""
+
+#. translators: 1: AI provider name, 2: link to its terms, 3: link to its privacy policy
+#: includes/Privacy/PersonalData.php:293
+msgid "%1$s processes the photo under its %2$s and %3$s."
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:295
+msgid "terms of service"
+msgstr ""
+
+#: includes/Privacy/PersonalData.php:296
+msgid "privacy policy"
+msgstr ""
+
+#: includes/Privacy/Retention.php:30
+msgid "Delete when the shopper's visit ends (recommended)"
+msgstr ""
+
+#: includes/Privacy/Retention.php:34
+msgid "Keep for 24 hours"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:108
+msgid "FLUX.2 photoreal product images with up to 8 references, plus a dedicated virtual try-on model."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:109
+#: includes/Providers/Gemini/GeminiProvider.php:85
+#: includes/Providers/OpenAI/OpenAIProvider.php:79
+#: includes/Providers/Xai/XaiProvider.php:107
+msgid "Images"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:109
+msgid "Try-on model"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:109
+msgid "From $0.014"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:111
+msgid "Create a key in the Black Forest Labs dashboard and add credits (1 credit = $0.01)."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:116
+#: includes/Providers/Gemini/GeminiProvider.php:92
+#: includes/Providers/OpenAI/OpenAIProvider.php:86
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:87
+#: includes/Providers/Xai/XaiProvider.php:114
+msgid "Image model"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:125
+msgid "FLUX Virtual Try-On (recommended)"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:126
+msgid "The image model above"
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:129
+msgid "The try-on model keeps the shopper's face and pose best and is fast."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:132
+msgid "Instructions and the images involved (product photos and, for try-on, the shopper's photo) are sent from your server directly to the Black Forest Labs API using your key; the result is downloaded from Black Forest Labs right away. Nothing is sent to WearGraph or CodeSolz."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:168
+msgid "Your Black Forest Labs key works but has no credits left. Add credits in the dashboard."
+msgstr ""
+
+#. translators: %s: number of credits
+#: includes/Providers/Flux/FluxProvider.php:177
+msgid "Connected. %s credits left."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:178
+msgid "Connected. Your Black Forest Labs key works."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:311
+msgid "The AI provider returned a link WearGraph does not trust."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:330
+msgid "The AI provider could not finish this image. Please try again."
+msgstr ""
+
+#: includes/Providers/Flux/FluxProvider.php:335
+#: includes/Providers/Gemini/GeminiErrors.php:33
+#: includes/Providers/Gemini/GeminiErrors.php:86
+#: includes/Providers/Http/ErrorMap.php:29
+#: includes/Providers/Http/ErrorMap.php:90
+msgid "The AI provider took too long to respond. Please try again."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:36
+#: includes/Providers/Http/ErrorMap.php:32
+msgid "Could not reach the AI provider. Please check the server connection and try again."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:55
+msgid "Your AI provider rejected the API key. Check the key in WearGraph → Settings."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:66
+#: includes/Providers/Http/ErrorMap.php:74
+msgid "The AI provider could not process this request. Try a different image or settings."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:70
+#: includes/Providers/Http/ErrorMap.php:78
+msgid "The selected AI model is not available for your API key. Choose another model in WearGraph → Settings."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:76
+msgid "Your Gemini API key is on the Google free tier, which has no quota for image models. Turn on billing for the Google Cloud project this key belongs to (Google AI Studio: Settings, Billing), wait a few minutes, then try again."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:79
+#: includes/Providers/Http/ErrorMap.php:83
+msgid "Your AI provider quota is used up. Check the plan or billing on your provider account."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:82
+#: includes/Providers/Http/ErrorMap.php:86
+msgid "The AI provider is busy. Please try again in a moment."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:90
+#: includes/Providers/Http/ErrorMap.php:94
+msgid "The AI provider had a temporary problem. Please try again."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:93
+#: includes/Providers/Http/ErrorMap.php:97
+msgid "Unexpected response from the AI provider."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:134
+#: includes/Providers/Http/ErrorMap.php:104
+msgid "The AI provider declined this image. Please use a different photo or product image."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiErrors.php:141
+#: includes/Providers/Gemini/GeminiProvider.php:419
+#: includes/Providers/Http/ErrorMap.php:111
+msgid "The AI provider returned no image. Please try again."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:84
+msgid "Nano Banana image models: product photos, edits, try-on and alt text with one key."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:87
+msgid "Create a key in Google AI Studio. Use a key from a Google Cloud project with billing enabled."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:96
+msgid "Used for product images and try-on. The balanced model suits most stores."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:99
+msgid "When you generate an image, or a shopper uses try-on, your server sends the instructions and the images involved (product photos and, for try-on, the shopper's photo) directly to the Google Gemini API using your key. Nothing is sent to WearGraph or CodeSolz. On Google's free (unpaid) tier, Google may use submitted content to improve its products and human reviewers may see it: do not use a free-tier key for shopper photos."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:202
+msgid "Connected. Your API key works and can use the image model."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:254
+#: includes/Providers/RestImageProvider.php:164
+msgid "Footwear previews are less reliable."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:256
+#: includes/Providers/RestImageProvider.php:166
+msgid "Accessory previews are experimental."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:317
+#: includes/Providers/OpenAI/VisionParser.php:58
+msgid "The AI provider returned an unreadable answer. Please try again."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:464
+#: includes/Providers/RestImageProvider.php:118
+msgid "An image for this request could not be read."
+msgstr ""
+
+#: includes/Providers/Gemini/GeminiProvider.php:531
+#: includes/Providers/ProviderRegistry.php:242
+msgid "Your AI provider has no API key yet. Add it in WearGraph → Settings."
+msgstr ""
+
+#. translators: %s: provider name, e.g. OpenAI
+#: includes/Providers/Http/ErrorMap.php:45
+msgid "%s rejected the API key. Check the key in WearGraph → Settings → AI Provider."
+msgstr ""
+
+#. translators: %s: provider name
+#: includes/Providers/Http/ErrorMap.php:56
+msgid "%s needs your account to be verified before this model can be used. Verify your organisation on the provider's website, or choose another model."
+msgstr ""
+
+#. translators: %s: provider name
+#: includes/Providers/Http/ErrorMap.php:63
+msgid "Your %s account has no credit left. Add credit or check billing on the provider's website."
+msgstr ""
+
+#: includes/Providers/Http/ResultDownloader.php:69
+msgid "The AI provider returned an image link WearGraph does not trust."
+msgstr ""
+
+#: includes/Providers/Http/ResultDownloader.php:85
+msgid "The generated image could not be downloaded. Please try again."
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIModels.php:136
+msgid "Low (fastest, cheapest)"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIModels.php:137
+msgid "Medium (recommended)"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIModels.php:138
+msgid "High"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIModels.php:139
+msgid "Extra high (GPT Image 2.5 only)"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIModels.php:140
+msgid "Maximum (GPT Image 2.5 only)"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:78
+msgid "GPT Image: precise edits and strong text rendering, up to 16 reference images."
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:81
+msgid "Create a secret key on the OpenAI platform. GPT Image models may ask you to verify your organisation first."
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:93
+msgid "Quality"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:97
+msgid "Higher quality costs more and takes longer. Medium suits product photos."
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:100
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:95
+msgid "Model for alt text and checks"
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:104
+msgid "Used when OpenAI writes alt text or checks images."
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:107
+msgid "Instructions and the images involved (product photos and, for try-on, the shopper's photo) are sent from your server directly to the OpenAI API using your key. Nothing is sent to WearGraph or CodeSolz."
+msgstr ""
+
+#: includes/Providers/OpenAI/OpenAIProvider.php:150
+msgid "Connected. Your OpenAI key works and can see the image model."
+msgstr ""
+
+#: includes/Providers/OpenAI/VisionParser.php:40
+msgid "The AI provider declined to describe this image."
+msgstr ""
+
+#: includes/Providers/OpenAI/VisionParser.php:43
+msgid "The AI provider returned an empty answer. Please try again."
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:79
+msgid "One key for 50+ image models: Nano Banana, GPT Image, FLUX.2, Seedream, Qwen, Grok and more."
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:80
+msgid "50+ models"
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:82
+msgid "Create a key on OpenRouter and add credit. Failed generations are not charged."
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:92
+msgid "Refresh to see every image model that accepts reference images."
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:101
+msgid "Instructions and the images involved (product photos and, for try-on, the shopper's photo) are sent from your server to OpenRouter using your key, and OpenRouter passes them to the company running the chosen model (for example Google, OpenAI or Black Forest Labs). Nothing is sent to WearGraph or CodeSolz."
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:142
+msgid "Your OpenRouter key works but has no credit left. Add credit on OpenRouter."
+msgstr ""
+
+#: includes/Providers/OpenRouter/OpenRouterProvider.php:145
+msgid "Connected. Your OpenRouter key works."
+msgstr ""
+
+#: includes/Providers/ProviderRegistry.php:238
+msgid "No AI provider is set up for this task. Add your API key in WearGraph → Settings."
+msgstr ""
+
+#. translators: %s: provider name
+#: includes/Providers/RestImageProvider.php:103
+msgid "%s has no API key yet. Add it in WearGraph → Settings → AI Provider."
+msgstr ""
+
+#: includes/Providers/Xai/XaiProvider.php:106
+msgid "Grok Imagine: quick, low-cost image generation and editing with up to 5 references."
+msgstr ""
+
+#: includes/Providers/Xai/XaiProvider.php:107
+msgid "From $0.02"
+msgstr ""
+
+#: includes/Providers/Xai/XaiProvider.php:109
+msgid "Create an API key in the xAI console and add credit."
+msgstr ""
+
+#: includes/Providers/Xai/XaiProvider.php:121
+msgid "Instructions and the images involved (product photos and, for try-on, the shopper's photo) are sent from your server directly to the xAI API using your key. Nothing is sent to WearGraph or CodeSolz."
+msgstr ""
+
+#: includes/Providers/Xai/XaiProvider.php:154
+msgid "Connected. Your xAI key works."
+msgstr ""
+
+#: includes/Rest/CatalogController.php:202
+msgid "Unknown bulk action."
+msgstr ""
+
+#: includes/Rest/GenerationsController.php:89
+#: includes/Rest/GenerationsController.php:108
+#: includes/Rest/MediaController.php:70
+#: includes/Rest/MediaController.php:86
+msgid "Not found."
+msgstr ""
+
+#: includes/Rest/MediaController.php:65
+#: includes/Rest/MediaController.php:80
+msgid "This link has expired."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:118
+msgid "Your fitting-room session expired. Please reload the page."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:129
+#: includes/Rest/StorefrontController.php:269
+msgid "Too many requests. Please wait a moment."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:176
+msgid "Too many uploads. Please wait a moment."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:266
+msgid "Unknown event."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:274
+msgid "Unknown product."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:297
+msgid "This photo is too large. Please use a photo under 10 MB."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:298
+msgid "This photo is too small. Please use a sharper photo (at least 512 pixels wide)."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:299
+msgid "Please use a JPG or PNG photo."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:300
+msgid "This photo could not be read. Please try another one."
+msgstr ""
+
+#: includes/Rest/StorefrontController.php:301
+msgid "The photo did not arrive. Please try again."
+msgstr ""
+
+#: includes/Rest/StudioController.php:155
+#: includes/Rest/StudioController.php:349
+#: includes/Rest/StudioController.php:374
+#: includes/Services/CatalogService.php:188
+msgid "Choose images that belong to this product."
+msgstr ""
+
+#: includes/Rest/StudioController.php:163
+msgid "Choose at least one product image to work from."
+msgstr ""
+
+#: includes/Rest/StudioController.php:293
+msgid "Unknown destination."
+msgstr ""
+
+#: includes/Rest/StudioController.php:296
+msgid "This result is not ready yet."
+msgstr ""
+
+#: includes/Rest/StudioController.php:299
+msgid "You are not allowed to upload files."
+msgstr ""
+
+#: includes/Rest/StudioController.php:305
+msgid "That image does not belong to this result."
+msgstr ""
+
+#: includes/Rest/StudioController.php:310
+msgid "Only images can be the product image or go in the product gallery."
+msgstr ""
+
+#: includes/Rest/StudioController.php:317
+msgid "The image could not be added to the Media Library."
+msgstr ""
+
+#: includes/Services/CatalogService.php:155
+msgid "Unknown category."
+msgstr ""
+
+#: includes/Services/CatalogService.php:166
+msgid "Unknown layer."
+msgstr ""
+
+#: includes/Services/CatalogService.php:177
+msgid "Unknown try-on setting."
+msgstr ""
+
+#: includes/Services/GenerationService.php:163
+msgid "The daily AI spending limit for this store has been reached. Please try again tomorrow."
+msgstr ""
+
+#: includes/Services/GenerationService.php:164
+msgid "This request would cost more than the per-request limit set in WearGraph → Settings."
+msgstr ""
+
+#: includes/Services/GenerationService.php:223
+msgid "That AI provider is not set up for this."
+msgstr ""
+
+#: includes/Services/GenerationService.php:240
+msgid "This kind of generation is not available."
+msgstr ""
+
+#: includes/Services/GenerationService.php:247
+msgid "The request is incomplete or one of its images could not be found."
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:28
+msgid "No scene (studio)"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:32
+msgid "City street"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:36
+msgid "Café"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:40
+msgid "Beach"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:44
+msgid "Park"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:48
+msgid "Living room"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:52
+msgid "Office"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:56
+msgid "Gym"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:60
+msgid "Outdoors / mountains"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:64
+msgid "Rooftop at golden hour"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:68
+msgid "Winter snow"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:72
+msgid "Boutique interior"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:78
+msgid "Pure white"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:82
+msgid "Light grey"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:86
+msgid "Warm beige"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:90
+msgid "Black"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:94
+msgid "Soft pastel"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:98
+msgid "Subtle gradient"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:102
+msgid "Concrete"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:106
+msgid "Wood"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:110
+msgid "Marble"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:114
+msgid "Linen fabric"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:120
+msgid "Clean catalog"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:124
+msgid "Fashion editorial"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:128
+msgid "Lifestyle"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:132
+msgid "Luxury"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:136
+msgid "Minimal"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:140
+msgid "Streetwear"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:144
+msgid "Flat lay"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:148
+msgid "Sporty / active"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:154
+msgid "Any model"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:158
+msgid "Woman"
+msgstr ""
+
+#: includes/Services/PresetLibrary.php:162
+msgid "Man"
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:147
+#: includes/Storefront/AccountPage.php:166
+msgid "My fitting room"
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:240
+msgid "A product no longer in the store"
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:258
+msgid "The try-on images made from your photo in our fitting room. Only you can see them, and you can delete them at any time."
+msgstr ""
+
+#. translators: %d: number of images
+#: includes/Storefront/AccountPage.php:270
+msgid "Your try-on image (%d)"
+msgid_plural "Your try-on images (%d)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Storefront/AccountPage.php:279
+msgid "You have no try-on images yet. Look for the Try On button on product pages."
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:286
+msgid "Delete my photos and all try-on images"
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:287
+msgid "Deletes them from this store straight away. Your orders are not affected."
+msgstr ""
+
+#. translators: %s: product name
+#: includes/Storefront/AccountPage.php:303
+msgid "You wearing %s (AI preview)"
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:362
+msgid "The try-on image was deleted."
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:362
+msgid "That image could not be found. It may already be deleted."
+msgstr ""
+
+#: includes/Storefront/AccountPage.php:366
+msgid "Your fitting-room photos and try-on images were deleted."
+msgstr ""
+
+#: includes/Storefront/ButtonRenderer.php:94
+#: assets/blocks/try-on-button/editor.js:37
+msgid "Try On"
+msgstr ""
+
+#: includes/Storefront/ButtonRenderer.php:95
+msgid "See It On Me"
+msgstr ""
+
+#: includes/Storefront/ButtonRenderer.php:96
+msgid "Virtual Fitting Room"
+msgstr ""
+
+#: includes/Storefront/ButtonRenderer.php:97
+msgid "Try This Look"
+msgstr ""
+
+#: includes/Storefront/ButtonRenderer.php:98
+msgid "Preview On Me"
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:251
+msgid "I agree that my photo is sent to our AI provider to create this preview. My photo is deleted automatically and is not used for anything else."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:265
+msgid "Please agree to the photo terms first."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:270
+msgid "Your photo could not be saved. Please try again."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:354
+msgid "Try-on is not available for this product."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:357
+msgid "Please choose an option of this product."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:361
+msgid "This option cannot be tried on yet."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:366
+msgid "Please add your photo first."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:372
+msgid "That earlier result is no longer available. Please start the look again."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:385
+msgid "Please confirm you are not a robot."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:391
+msgid "You have used all regenerations for now."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:391
+msgid "You have reached the try-on limit for now. Please come back later."
+msgstr ""
+
+#: includes/Storefront/StorefrontService.php:397
+msgid "Too many try-ons from this connection today. Please come back tomorrow."
+msgstr ""
+
+#: includes/Storefront/Strings.php:25
+msgid "Close"
+msgstr ""
+
+#: includes/Storefront/Strings.php:27
+msgid "Try-on is not available for this product right now."
+msgstr ""
+
+#: includes/Storefront/Strings.php:28
+msgid "Add a photo of yourself"
+msgstr ""
+
+#: includes/Storefront/Strings.php:29
+msgid "Stand facing the camera, arms relaxed, in good light. Head to hips (or head to toe) in the frame works best."
+msgstr ""
+
+#: includes/Storefront/Strings.php:30
+msgid "Upload a photo"
+msgstr ""
+
+#: includes/Storefront/Strings.php:31
+msgid "Take a photo"
+msgstr ""
+
+#: includes/Storefront/Strings.php:32
+msgid "Capture"
+msgstr ""
+
+#: includes/Storefront/Strings.php:34
+msgid "The camera is not available. Please upload a photo instead."
+msgstr ""
+
+#: includes/Storefront/Strings.php:35
+msgid "Use this photo"
+msgstr ""
+
+#: includes/Storefront/Strings.php:36
+msgid "Choose another"
+msgstr ""
+
+#: includes/Storefront/Strings.php:37
+msgid "This photo is too small. Please use a sharper photo."
+msgstr ""
+
+#: includes/Storefront/Strings.php:38
+msgid "This photo looks very dark. A brighter photo gives a better result."
+msgstr ""
+
+#: includes/Storefront/Strings.php:39
+msgid "This photo looks overexposed. Try a photo with softer light."
+msgstr ""
+
+#: includes/Storefront/Strings.php:40
+msgid "A portrait (upright) photo works best."
+msgstr ""
+
+#: includes/Storefront/Strings.php:41
+msgid "Please choose a JPG or PNG photo."
+msgstr ""
+
+#: includes/Storefront/Strings.php:43
+msgid "Your photo is deleted automatically after this visit."
+msgstr ""
+
+#: includes/Storefront/Strings.php:44
+msgid "Your photo is deleted automatically within 24 hours."
+msgstr ""
+
+#: includes/Storefront/Strings.php:45
+msgid "Uploading your photo…"
+msgstr ""
+
+#: includes/Storefront/Strings.php:46
+msgid "Choose an option"
+msgstr ""
+
+#: includes/Storefront/Strings.php:47
+msgid "not available for try-on"
+msgstr ""
+
+#: includes/Storefront/Strings.php:48
+msgid "Try it on"
+msgstr ""
+
+#: includes/Storefront/Strings.php:49
+msgid "Creating your preview… this usually takes 10–30 seconds."
+msgstr ""
+
+#: includes/Storefront/Strings.php:50
+msgid "Still working, almost there…"
+msgstr ""
+
+#: includes/Storefront/Strings.php:51
+msgid "AI appearance preview. It shows how the item may look, not how it will fit. Please check the size guide."
+msgstr ""
+
+#: includes/Storefront/Strings.php:52
+msgid "Add to cart"
+msgstr ""
+
+#: includes/Storefront/Strings.php:53
+msgid "Adding…"
+msgstr ""
+
+#: includes/Storefront/Strings.php:54
+msgid "Added to your cart."
+msgstr ""
+
+#: includes/Storefront/Strings.php:55
+msgid "View cart"
+msgstr ""
+
+#: includes/Storefront/Strings.php:56
+msgid "Please choose your size on the product page."
+msgstr ""
+
+#: includes/Storefront/Strings.php:57
+msgid "Try again"
+msgstr ""
+
+#: includes/Storefront/Strings.php:58
+msgid "Use a different photo"
+msgstr ""
+
+#: includes/Storefront/Strings.php:59
+msgid "Compare with my photo"
+msgstr ""
+
+#: includes/Storefront/Strings.php:60
+msgid "Show the preview"
+msgstr ""
+
+#: includes/Storefront/Strings.php:61
+msgid "Delete my photos"
+msgstr ""
+
+#: includes/Storefront/Strings.php:62
+msgid "Your photos were deleted."
+msgstr ""
+
+#: includes/Storefront/Strings.php:63
+msgid "Delete your photo and all previews now?"
+msgstr ""
+
+#: includes/Storefront/Strings.php:64
+msgid "Option"
+msgstr ""
+
+#: includes/Storefront/Strings.php:65
+msgid "Sorry, the preview could not be created."
+msgstr ""
+
+#: includes/Storefront/Strings.php:66
+msgid "Connection problem. Please try again."
+msgstr ""
+
+#. translators: %d: number of previews left
+#: includes/Storefront/Strings.php:68
+msgid "Previews left: %d"
+msgstr ""
+
+#: includes/Storefront/Strings.php:69
+msgid "Your photo"
+msgstr ""
+
+#: includes/Storefront/Strings.php:70
+msgid "Preview"
+msgstr ""
+
+#. translators: 1: required PHP version, 2: current PHP version
+#: weargraph.php:52
+msgid "WearGraph requires PHP %1$s or higher. Your site is running PHP %2$s."
+msgstr ""
+
+#: weargraph.php:62
+msgid "WearGraph is missing its dependencies. Please reinstall the plugin."
+msgstr ""
+
+#: assets/blocks/try-on-button/editor.js:28
+msgid "Product ID (leave empty for the current product)"
+msgstr ""
+
+#: assets/blocks/try-on-button/editor.js:39
+msgid "Shown only for products switched on in WearGraph → Catalog."
+msgstr ""
+
+#: assets/blocks/try-on-button/block.json
+msgctxt "block title"
+msgid "Try On button"
+msgstr ""
+
+#: assets/blocks/try-on-button/block.json
+msgctxt "block description"
+msgid "Shows the WearGraph virtual try-on button for a product. Leave the product empty inside a product template to use the current product."
+msgstr ""
+
+#: assets/blocks/try-on-button/block.json
+msgctxt "block keyword"
+msgid "try on"
+msgstr ""
+
+#: assets/blocks/try-on-button/block.json
+msgctxt "block keyword"
+msgid "virtual"
+msgstr ""
+
+#: assets/blocks/try-on-button/block.json
+msgctxt "block keyword"
+msgid "fitting room"
+msgstr ""
+
+#: assets/blocks/try-on-button/block.json
+msgctxt "block keyword"
+msgid "weargraph"
+msgstr ""

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "weargraph/try-on-button",
+	"title": "Try On button",
+	"category": "woocommerce",
+	"icon": "camera-alt",
+	"description": "Shows the WearGraph virtual try-on button for a product. Leave the product empty inside a product template to use the current product.",
+	"keywords": [ "try on", "virtual", "fitting room", "weargraph" ],
+	"textdomain": "weargraph",
+	"attributes": {
+		"productId": { "type": "number", "default": 0 }
+	},
+	"usesContext": [ "postId", "postType" ],
+	"supports": { "html": false, "align": [ "left", "center", "right" ] },
+	"editorScript": "weargraph-block-editor"
+}

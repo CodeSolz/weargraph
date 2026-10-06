@@ -1,0 +1,75 @@
+/*
+ * WearGraph Try On button. Themes that style .button (Storefront, Astra…) win: the
+ * fallback look below sits in :where(), which has zero specificity. Block themes that
+ * leave <button class="button"> unstyled (Twenty Twenty-Five) get a clean outline
+ * button instead of the browser's grey default.
+ */
+:where(.weargraph-tryon-button) {
+	padding: .65em 1.15em;
+	border: 1px solid currentColor;
+	border-radius: 4px;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	line-height: 1.2;
+	text-decoration: none;
+}
+
+:where(.weargraph-tryon-button):hover {
+	background: rgba(127, 127, 127, .12);
+}
+
+.weargraph-tryon-button {
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start; /* Never stretched by a flex-column parent… */
+	justify-self: start; /* …or by WooCommerce's grid add-to-cart form (block themes). */
+	gap: .45em;
+	width: auto;
+	max-width: 100%;
+	margin: .5em 0 .5em .5em;
+	cursor: pointer;
+}
+
+.weargraph-tryon-button__icon {
+	width: 1.05em;
+	height: 1.05em;
+	flex: none;
+	background: currentColor;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.weargraph-tryon-button--small {
+	margin: .4em 0 0;
+	font-size: .85em;
+}
+
+.weargraph-tryon-button[aria-busy="true"] {
+	opacity: .7;
+	cursor: progress;
+}
+
+@media (max-width: 600px) {
+	.single-product .weargraph-tryon-button:not(.weargraph-tryon-button--small) {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		margin: .6em 0;
+	}
+}
+
+/* A visible focus ring even when the theme's button styles have none. */
+.weargraph-tryon-button:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+/* In WooCommerce's block add-to-cart form the button starts its own row: align it with Add to cart. */
+.wp-block-woocommerce-add-to-cart-form .weargraph-tryon-button {
+	margin-left: 0;
+}
+
+.weargraph-tryon-fallback[hidden] {
+	display: none !important;
+}

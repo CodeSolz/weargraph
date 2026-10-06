@@ -1,0 +1,121 @@
+/*
+ * My Account → My fitting room: the kept photo and a gallery of try-on images, each with
+ * its own Delete button. Inherits the theme's font; neutral colours so it fits any store.
+ */
+.weargraph-account-fitting-room {
+	--wga-line: #ebe7e1;
+	--wga-soft: #f7f5f2;
+	--wga-muted: #6c665e;
+}
+
+.weargraph-account-intro {
+	color: var(--wga-muted);
+}
+
+.weargraph-account-section {
+	margin: 0 0 28px;
+}
+
+.weargraph-account-section h3 {
+	margin: 0 0 12px;
+}
+
+.weargraph-account-photo {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 16px;
+}
+
+.weargraph-account-photo img {
+	width: 140px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 12px;
+	background: var(--wga-soft);
+}
+
+.weargraph-account-photo p {
+	flex: 1 1 220px;
+	margin: 0;
+	color: var(--wga-muted);
+}
+
+.weargraph-account-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(140px, 100%), 1fr));
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.weargraph-account-item {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid var(--wga-line);
+	border-radius: 14px;
+	background: #fff;
+}
+
+.weargraph-account-item__image {
+	display: block;
+	aspect-ratio: 3 / 4;
+	background: var(--wga-soft);
+}
+
+.weargraph-account-item__image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform .3s ease;
+}
+
+.weargraph-account-item__image:hover img,
+.weargraph-account-item__image:focus img {
+	transform: scale(1.03);
+}
+
+.weargraph-account-item__body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 2px;
+	padding: 10px 12px 12px;
+}
+
+.weargraph-account-item__name {
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.weargraph-account-item__meta {
+	color: var(--wga-muted);
+	font-size: .85em;
+}
+
+.weargraph-account-item__delete {
+	margin: auto 0 0;
+	padding-top: 8px;
+}
+
+.weargraph-account-item__delete .button {
+	width: 100%;
+	font-size: .85em;
+}
+
+.weargraph-account-empty {
+	padding: 18px;
+	border-radius: 12px;
+	background: var(--wga-soft);
+	color: var(--wga-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.weargraph-account-item__image img {
+		transition: none;
+	}
+}
