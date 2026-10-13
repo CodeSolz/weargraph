@@ -19,6 +19,8 @@ WearGraph also gives you a **Product Studio** inside the product editor, to turn
 
 WearGraph runs **inside your WordPress site with your own AI provider key**. Choose **Google Gemini**, **OpenAI**, **OpenRouter** (one key for 50+ image models), **Black Forest Labs FLUX** or **xAI Grok**, connect one or several, and pick which provider makes product images, try-on previews and alt text. There is no WearGraph account, no subscription and no WearGraph server in between: you pay your provider directly for what you generate.
 
+[youtube https://www.youtube.com/watch?v=sCHrTqI8S64]
+
 ### AI fitting room (virtual try-on)
 
 * A **Try On** button on Try-On Ready products: placed automatically, or with the **Try On button** block or the `[weargraph_try_on]` shortcode.
